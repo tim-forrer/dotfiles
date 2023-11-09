@@ -23,8 +23,13 @@ require("lazy").setup({
   {"ms-jpq/coq_nvim",
     branch = "coq"
   },
-  {"sbdchd/neoformat"}
+  {"sbdchd/neoformat"},
+  {"L3MON4D3/LuaSnip",
+	  version = "v2.*", 
+	  build = "make install_jsregexp"
+  }
 })
 
 g.neoformat_haskell_ormolu = { exe = "ormolu", args = {} }
 g.neoformat_enabled_haskell = {"ormolu"}
+
