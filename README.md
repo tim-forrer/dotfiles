@@ -1,0 +1,3 @@
+# Setup customisation
+- Nvim
+- Tmux
