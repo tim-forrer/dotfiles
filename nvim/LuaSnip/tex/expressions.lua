@@ -1,9 +1,14 @@
+local in_mathzone = function()
+  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
+end
+
 return {
   -- Fractions
-  s( {trig="ff", dscr="Expands 'ff' into '\frac{}{}'"},
+  s( {trig="ff", dscr="Expands 'ff' into '\\frac{}{} when in mathmode'"},
     fmta(
       "\\frac{<>}{<>}",
-      { i(1), i(2) }
+      { i(1), i(2) },
+      { condition = in_mathzone }
     )
   ),
 

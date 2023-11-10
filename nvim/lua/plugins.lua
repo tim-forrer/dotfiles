@@ -27,9 +27,9 @@ require("lazy").setup({
   {"L3MON4D3/LuaSnip",
 	  version = "v2.*", 
 	  build = "make install_jsregexp"
+  },
+  {"lervag/vimtex",
+    lazy = false,
   }
 })
-
-g.neoformat_haskell_ormolu = { exe = "ormolu", args = {} }
-g.neoformat_enabled_haskell = {"ormolu"}
 
