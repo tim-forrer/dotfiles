@@ -1,3 +1,7 @@
 #!/bin/bash
-ln -s "$HOME/dotfiles/nvim" "$HOME/.config"
-ln -s "$HOME/dotfiles/tmux/.tmux.conf" "$HOME/.tmux.conf"
+DOTFILES = "$HOME/dotfiles"
+DOTCONFIG = "$HOME/.config"
+
+ln -s "$DOTFILES/nvim" "$DOTCONFIG"
+ln -s "$DOTFILES/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -s "$DOTFILES/stylua" "$DOTCONFIG

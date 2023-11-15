@@ -4,7 +4,7 @@ local trailing_whitespace = "%s*$"
 
 -- Lua functions
 local function escape(s)
-    return (s:gsub('[%-%.%+%[%]%(%)%$%^%%%?%*]','%%%1'))
+  return (s:gsub("[%-%.%+%[%]%(%)%$%^%%%?%*]", "%%%1"))
 end
 
 local function getCommentPrefix()
@@ -18,13 +18,15 @@ local function getCommentPrefix()
   end
 end
 
-local function replaceBlankCommentLine ()
+local function replaceBlankCommentLine()
   local line = api.nvim_get_current_line()
   local prefix = getCommentPrefix()
-  if prefix and string.find(
-    line,
-    starting_whitespace .. escape(prefix) .. trailing_whitespace
-  )
+  if
+    prefix
+    and string.find(
+      line,
+      starting_whitespace .. escape(prefix) .. trailing_whitespace
+    )
   then
     return "<C-u>"
   else
@@ -33,50 +35,35 @@ local function replaceBlankCommentLine ()
 end
 
 -- Keybindings
-g.mapleader = ','
+g.mapleader = ","
 
+-- Insert mode
 keymap.set(
-  'i',
-  '<CR>',
+  "i",
+  "<CR>",
   replaceBlankCommentLine,
-  { noremap = true, expr = true, silent = true } 
+  { noremap = true, expr = true, silent = true }
 )
 
+-- Normal mode
 keymap.set(
-  'n',
+  "n",
   "<leader>h",
   ":set hlsearch!<CR>",
   { noremap = true, silent = true }
 )
 
-keymap.set(
-  'n',
-  "<leader>w",
-  ":w<CR>",
-  { noremap = true }
-)
+keymap.set("n", "<leader>w", ":w<CR>", { noremap = true })
 
 keymap.set(
-  'n',
+  "n",
   "<leader>r",
   ":source ~/.config/nvim/init.lua<CR>",
   { noremap = true }
 )
 
-keymap.set(
-  'n',
-  "<leader>q",
-  ":q<CR>",
-  { noremap = true }
-)
+keymap.set("n", "<leader>q", ":wq<CR>", { noremap = true })
 
--- Luasnip
---cmd[[
---" Use Tab to expand and jump through snippets
---imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
---smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
---
---" Use Shift-Tab to jump backwards through snippets
---imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
---smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
---]]
+keymap.set("n", "<leader><leader>q", ":q<CR>", { noremap = true })
+
+keymap.set("n", "<leader>Q", ":q!<CR>", { noremap = true })
