@@ -13,23 +13,14 @@ end
 opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {"folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
+  { "folke/tokyonight.nvim", lazy = false, priority = 1000 },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "ms-jpq/coq_nvim", branch = "coq" },
+  { "sbdchd/neoformat" },
+  {
+    "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp",
   },
-  {"nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate"
-  },
-  {"ms-jpq/coq_nvim",
-    branch = "coq"
-  },
-  {"sbdchd/neoformat"},
-  {"L3MON4D3/LuaSnip",
-	  version = "v2.*", 
-	  build = "make install_jsregexp"
-  },
-  {"lervag/vimtex",
-    lazy = false,
-  }
+  { "lervag/vimtex", lazy = false },
 })
-
