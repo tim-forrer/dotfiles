@@ -17,3 +17,5 @@ g.neoformat_lua_stylua = {
   stdin = 1,
 }
 g.neoformat_enabled_lua = { "stylua" }
+
+g.neoformat_enabled_tex = { "latexindent" }
