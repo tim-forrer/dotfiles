@@ -72,6 +72,8 @@ local nvim_cmp = {
   dependencies = cmp_dependencies,
 }
 
+local mason = { "williamboman/mason.nvim" }
+
 -- Install lazy.nvim if not found
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -97,4 +99,5 @@ require("lazy").setup({
   telescope,
   nvim_cmp,
   obsidian,
+  mason,
 })
