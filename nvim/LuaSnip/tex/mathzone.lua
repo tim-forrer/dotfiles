@@ -14,7 +14,7 @@ return {
     },
     fmta(
       [[
-        \multimap
+        \multimap 
       ]],
       {}
     ),
@@ -117,6 +117,21 @@ return {
         \parr
       ]],
       {}
+    ),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    {
+      trig = "_",
+      dscr = "Expands '_' into _{ }",
+      snippetType = "autosnippet",
+      wordTrig = false,
+    },
+    fmta(
+      [[
+        _{ <> }
+      ]],
+      { i(1, "label") }
     ),
     { condition = tex_utils.in_mathzone }
   ),
