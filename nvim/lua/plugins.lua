@@ -25,22 +25,51 @@ local telescope = {
     treesitter,
   },
 }
-local nvim_lspconfig = { "neovim/nvim-lspconfig" }
-local cmp_nvim_lsp = { "hrsh7th/cmp-nvim-lsp" }
-local cmp_buffer = { "hrsh7th/cmp-buffer" }
-local cmp_path = { "hrsh7th/cmp-path" }
-local cmp_cmdline = { "hrsh7th/cmp-cmdline" }
-local cmp_luasnip = { "saadparwaiz1/cmp_luasnip" }
+
+local obsidian = {
+  "epwalsh/obsidian.nvim",
+  version = "*",
+  lazy = true,
+  ft = "markdown",
+  dependencies = {
+    plenary,
+    treesitter,
+    -- nvim_cmp, this is a dependency but cannot explicitly make it so
+    telescope,
+  },
+  opts = {
+    workspaces = {
+      {
+        name = "the-forrerst",
+        path = "~/the-forrerst",
+      },
+    },
+    completion = {
+      nvim_cmp = true,
+      min_chars = 2,
+      new_notes_location = "current_dir",
+      prepend_note_id = true,
+    },
+  },
+}
+
+-- Completion dependencies
+local cmp_dependencies = {
+  plenary,
+  { "neovim/nvim-lspconfig" },
+  -- Sources
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "saadparwaiz1/cmp_luasnip" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-nvim-lua" },
+  { "micangl/cmp-vimtex" },
+  obsidian, -- Don't need to specify as a source
+}
+
 local nvim_cmp = {
   "hrsh7th/nvim-cmp",
-  dependencies = {
-    nvim_lspconfig,
-    cmp_nvim_lsp,
-    cmp_buffer,
-    cmp_path,
-    cmp_cmdline,
-    cmp_luasnip,
-  },
+  dependencies = cmp_dependencies,
 }
 
 -- Install lazy.nvim if not found
@@ -67,4 +96,5 @@ require("lazy").setup({
   vimtex,
   telescope,
   nvim_cmp,
+  obsidian,
 })
