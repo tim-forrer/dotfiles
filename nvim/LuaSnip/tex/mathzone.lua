@@ -45,7 +45,7 @@ return {
       [[
         ^{ <> }
       ]],
-      { d(1, get_visual) }
+      { d(1, tex_utils.get_visual) }
     ),
     { condition = tex_utils.in_mathzone }
   ),
@@ -132,6 +132,20 @@ return {
         _{ <> }
       ]],
       { i(1, "label") }
+    ),
+    { condition = tex_utils.in_mathzone }
+  ),
+  s(
+    {
+      trig = "cat",
+      dscr = "Expands 'cat' into mathbf{}",
+      snippetType = "snippet",
+    },
+    fmta(
+      [[
+        \mathbf{<>}
+      ]],
+      { i(1, "category") }
     ),
     { condition = tex_utils.in_mathzone }
   ),

@@ -1,11 +1,3 @@
-local get_visual = function(args, parent)
-  if #parent.snippet.env.LS_SELECT_RAW > 0 then
-    return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
-  else -- If LS_SELECT_RAW is empty, return a blank insert node
-    return sn(nil, i(1))
-  end
-end
-
 local tex_utils = require("tex_utils")
 
 return {
@@ -77,5 +69,20 @@ return {
       end),
       d(1, get_visual),
     })
+  ),
+  s(
+    {
+      trig = "enu",
+      dscr = "Expands 'enu' into a list environment",
+      snippetType = "snippet",
+    },
+    fmta(
+      [[
+        \begin{enumerate}
+          \item <>
+        \end{enumerate}
+      ]],
+      { i(1, "First list item") }
+    )
   ),
 }

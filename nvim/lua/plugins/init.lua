@@ -1,12 +1,23 @@
 -- Plugins
-local colorscheme = require("plugins.colorscheme")
-local treesitter = require("plugins.treesitter")
-local neoformat = require("plugins.neoformat")
-local luasnip = require("plugins.luasnip")
-local vimtex = require("plugins.vimtex")
-local cmp = require("plugins.cmp")
-local mason = require("plugins.mason")
-local lsp = require("plugins.lsp")
+local plugins = {
+  require("plugins.colorscheme"),
+  require("plugins.treesitter"),
+  require("plugins.neoformat"),
+  require("plugins.luasnip"),
+  require("plugins.vimtex"),
+  require("plugins.cmp"),
+  require("plugins.mason"),
+  require("plugins.lsp"),
+}
+
+-- Build a table of the plugin config files
+local build_config_table = function()
+  local tbl = {}
+  for _, v in pairs(plugins) do
+    table.insert(tbl, v.lazy_config)
+  end
+  return tbl
+end
 
 -- Install lazy.nvim if not found
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -20,24 +31,13 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)
 
--- Plugins to be installed
-require("lazy").setup({
-  colorscheme.lazy_config,
-  treesitter.lazy_config,
-  neoformat.lazy_config,
-  luasnip.lazy_config,
-  vimtex.lazy_config,
-  cmp.lazy_config,
-  mason.lazy_config,
-  lsp.lazy_config,
-})
+-- Setup plugin config files
+require("lazy").setup(build_config_table())
 
--- Load configurations
-colorscheme.load()
-luasnip.load()
-treesitter.load()
-cmp.load()
-mason.load()
-lsp.load()
+-- Load any specific functions if needed
+for _, plugin in pairs(plugins) do
+  -- Protected call since not every plugin has a .load() fn
+  pcall(plugin.load)
+end

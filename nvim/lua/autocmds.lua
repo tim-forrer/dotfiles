@@ -1,5 +1,5 @@
 -- Autocommand groups
-api.nvim_create_autocmd({ "BufWritePre" }, {
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = "*",
-  command = "undojoin | Neoformat"
+  command = "undojoin | Neoformat",
 })
