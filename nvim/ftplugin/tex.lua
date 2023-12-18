@@ -1,1 +1,1 @@
-g.maplocalleader = ","
+vim.g.maplocalleader = ","

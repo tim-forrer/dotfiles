@@ -1,14 +1,14 @@
 -- Haskell
-g.neoformat_haskell_ormolu = {
+vim.g.neoformat_haskell_ormolu = {
   exe = "ormolu",
 }
-g.neoformat_enabled_haskell = { "ormolu" }
+vim.g.neoformat_enabled_haskell = { "ormolu" }
 
 -- Python
-g.neoformat_enabled_python = { "black" }
+vim.g.neoformat_enabled_python = { "black" }
 
 -- Lua
-g.neoformat_lua_stylua = {
+vim.g.neoformat_lua_stylua = {
   exe = "stylua",
   args = {
     "--config-path ~/dotfiles/stylua/stylua.toml",
@@ -19,10 +19,10 @@ g.neoformat_lua_stylua = {
   },
   stdin = 1,
 }
-g.neoformat_enabled_lua = { "stylua" }
+vim.g.neoformat_enabled_lua = { "stylua" }
 
 -- Latex
-g.neoformat_enabled_tex = { "latexindent" }
+vim.g.neoformat_enabled_tex = { "latexindent" }
 
 -- Lazy config
 local M = {}

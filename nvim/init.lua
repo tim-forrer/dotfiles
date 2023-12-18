@@ -1,12 +1,3 @@
--- Aliases
-opt = vim.opt
-g = vim.g
-cmd = vim.cmd
-api = vim.api
-keymap = vim.keymap
-filetype = vim.filetype
-o = vim.o
-
 -- Options
 vim.opt.compatible = false -- disable compatibility to old-time vi
 vim.opt.showmatch = true -- show matching
@@ -31,7 +22,7 @@ vim.g.loaded_node_provider = 0 -- disable node plugins
 vim.g.python3_host_prog = "/Users/timforrer/.pyenv/versions/py3nvim/bin/python"
 
 -- Global settings
-vim.o.completeopt = "menu,preview,noselect"
+vim.o.completeopt = "noselect"
 vim.o.notimeout = true
 vim.o.encoding = "utf-8"
 
