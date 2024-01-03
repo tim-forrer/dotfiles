@@ -59,8 +59,8 @@ return {
   -- Inline mathmode
   vars.s(
     {
-      trig = "(%A)mm",
-      dscr = "Expands '(%A)mm' into $$",
+      trig = "([^%a])mm",
+      dscr = "Expands 'mm' into $$",
       wordTrig = false,
       regTrig = true,
     },

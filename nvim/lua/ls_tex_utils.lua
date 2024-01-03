@@ -1,3 +1,4 @@
+local vars = require("ls_variables")
 local tex_utils = {}
 
 function tex_utils.in_mathzone()
@@ -30,11 +31,11 @@ function tex_utils.in_tikz() -- TikZ picture environment detection
   return tex_utils.in_env("tikzpicture")
 end
 
-function tex_utils.get_visual(args, parent)
+function tex_utils.get_visual(_, parent)
   if #parent.snippet.env.LS_SELECT_RAW > 0 then
-    return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
+    return vars.sn(nil, vars.i(1, parent.snippet.env.LS_SELECT_RAW))
   else -- If LS_SELECT_RAW is empty, return a blank insert node
-    return sn(nil, i(1))
+    return vars.sn(nil, vars.i(1))
   end
 end
 
