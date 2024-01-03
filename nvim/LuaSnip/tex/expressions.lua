@@ -1,88 +1,89 @@
-local tex_utils = require("tex_utils")
+local tex_utils = require("ls_tex_utils")
+local vars = require("ls_variables")
 
 return {
   -- Sections
-  s(
+  vars.s(
     {
       trig = "sec",
       dscr = "Expands 'sec' into \\section",
       snippetType = "snippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \section{<>}
       ]],
-      { i(1) }
+      { vars.i(1) }
     ),
     {}
   ),
-  s(
+  vars.s(
     {
       trig = "ssec",
       dscr = "Expands 'ssec' into \\subsection",
       snippetType = "autosnippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \subsection{<>}
       ]],
-      { i(1) }
+      { vars.i(1) }
     ),
     {}
   ),
 
   -- General environments
-  s(
+  vars.s(
     { trig = "env", dscr = "Expands 'env' into some general environment" },
-    fmta(
+    vars.fmta(
       [[
         \begin{<>}
           <>
         \end{<>}
       ]],
-      { i(1), i(2), rep(1) }
+      { vars.i(1), vars.i(2), vars.rep(1) }
     )
   ),
-  s(
+  vars.s(
     { trig = "eq", dscr = "Expands 'eq' into an equation environment" },
-    fmta(
+    vars.fmta(
       [[
         \begin{equation}
           <>
         \end{equation}
       ]],
-      { i(0) }
+      { vars.i(0) }
     )
   ),
 
   -- Inline mathmode
-  s(
+  vars.s(
     {
       trig = "(%A)mm",
       dscr = "Expands '(%A)mm' into $$",
       wordTrig = false,
       regTrig = true,
     },
-    fmta("<>$<>$", {
-      f(function(_, snip)
+    vars.fmta("<>$<>$", {
+      vars.f(function(_, snip)
         return snip.captures[1]
       end),
-      d(1, get_visual),
+      vars.d(1, tex_utils.get_visual),
     })
   ),
-  s(
+  vars.s(
     {
       trig = "enu",
       dscr = "Expands 'enu' into a list environment",
       snippetType = "snippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \begin{enumerate}
           \item <>
         \end{enumerate}
       ]],
-      { i(1, "First list item") }
+      { vars.i(1, "First list item") }
     )
   ),
 }

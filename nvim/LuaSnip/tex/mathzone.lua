@@ -1,18 +1,19 @@
-local tex_utils = require("tex_utils")
+local tex_utils = require("ls_tex_utils")
+local vars = require("ls_variables")
 
 return {
-  s(
+  vars.s(
     { trig = "ff", dscr = "Expands 'ff' into '\\frac{}{} when in mathmode'" },
-    fmta("\\frac{<>}{<>}", { i(1), i(2) }),
+    vars.fmta("\\frac{<>}{<>}", { vars.i(1), vars.i(2) }),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "lolli",
       dscr = "Expands 'lolli' into \\multimap",
       snippetType = "autosnippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \multimap 
       ]],
@@ -20,13 +21,13 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "ox",
       dscr = "Expands 'ox' into \\otimes",
       snippetType = "autosnippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \otimes
       ]],
@@ -34,28 +35,28 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "^",
       dscr = "Expands '^' into ^{ }",
       snippetType = "autosnippet",
       wordTrig = false,
     },
-    fmta(
+    vars.fmta(
       [[
         ^{ <> }
       ]],
-      { d(1, tex_utils.get_visual) }
+      { vars.d(1, tex_utils.get_visual) }
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "iso",
       dscr = "Expands 'iso' into \\simeq",
       snippetType = "snippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \cong
       ]],
@@ -63,13 +64,13 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "niso",
       dscr = "Expands 'niso' into \ncong",
       snippetType = "snippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \ncong
       ]],
@@ -77,13 +78,13 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "->",
       dscr = "Expands '->' into \rightarrow",
       snippetType = "autosnippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \rightarrow
       ]],
@@ -91,14 +92,14 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "star",
       dscr = "Expands 'star' into ^{*}",
       snippetType = "autosnippet",
       wordTrig = false,
     },
-    fmta(
+    vars.fmta(
       [[
         ^{ * }
       ]],
@@ -106,13 +107,13 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "prr",
       dscr = "Expands 'prr' into \\parr",
       snippetType = "autosnippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \parr
       ]],
@@ -120,32 +121,32 @@ return {
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "_",
       dscr = "Expands '_' into _{ }",
       snippetType = "autosnippet",
       wordTrig = false,
     },
-    fmta(
+    vars.fmta(
       [[
         _{ <> }
       ]],
-      { i(1, "label") }
+      { vars.i(1, "label") }
     ),
     { condition = tex_utils.in_mathzone }
   ),
-  s(
+  vars.s(
     {
       trig = "cat",
       dscr = "Expands 'cat' into mathbf{}",
       snippetType = "snippet",
     },
-    fmta(
+    vars.fmta(
       [[
         \mathbf{<>}
       ]],
-      { i(1, "category") }
+      { vars.i(1, "category") }
     ),
     { condition = tex_utils.in_mathzone }
   ),

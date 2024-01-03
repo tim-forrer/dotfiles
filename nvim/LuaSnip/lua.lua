@@ -1,11 +1,12 @@
+local vars = require("ls_variables")
 return {
   -- Quickly add snippets
-  s(
+  vars.s(
     { trig = "s(", dscr = "Expands 's(' into boilerplate snippet" },
-    fmt(
+    vars.fmt(
       [=[
-        s( {{trig="{}", dscr="Expands '{}' into {}", snippetType = "{}"}},
-          fmta(
+       vars.s( {{trig="{}", dscr="Expands '{}' into {}", snippetType = "{}"}},
+          vars.fmta(
             [[
               {}
             ]],
@@ -15,22 +16,22 @@ return {
         ),
       ]=],
       {
-        i(1, "trigger"),
-        rep(1),
-        i(2),
-        i(3, "autosnippet"),
-        i(4),
-        i(5, "nodes"),
-        i(6, "condition = "),
+        vars.i(1, "trigger"),
+        vars.rep(1),
+        vars.i(2),
+        vars.i(3, "autosnippet"),
+        vars.i(4),
+        vars.i(5, "nodes"),
+        vars.i(6, "condition = "),
       }
     )
   ),
 
-  s(
+  vars.s(
     { trig = "mzone", dscr = "Expands 'mzone' into boilerplate snippet" },
-    fmt(
+    vars.fmt(
       [=[
-        s( {{trig="{}", dscr="Expands '{}' into {}", snippetType = "{}"}},
+       vars.s( {{trig="{}", dscr="Expands '{}' into {}", snippetType = "{}"}},
           fmta(
             [[
               {}
@@ -40,7 +41,7 @@ return {
           {{ condition = tex_utils.in_mathzone }}
         ),
       ]=],
-      { i(1), rep(1), i(2), i(3, "autosnippet"), rep(2), i(4) }
+      { vars.i(1), rep(1), i(2), i(3, "autosnippet"), rep(2), i(4) }
     )
   ),
 }
