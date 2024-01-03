@@ -1,0 +1,4 @@
+# Darktable files
+*.db
+*.db*
+*.backup
