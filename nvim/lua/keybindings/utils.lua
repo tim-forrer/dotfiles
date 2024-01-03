@@ -18,6 +18,18 @@ local getCommentPrefix = function()
   end
 end
 
+local getBufferCount = function()
+  local bufnrs = vim.tbl_filter(function(b)
+    if 1 ~= vim.fn.buflisted(b) then
+      return false
+    else
+      return true
+    end
+  end, vim.api.nvim_list_bufs())
+
+  return #bufnrs
+end
+
 -- Things to be exported
 local M = {}
 
@@ -34,6 +46,14 @@ M.replaceBlankCommentLine = function()
     return "<C-u>"
   else
     return "<CR>"
+  end
+end
+
+M.quitIfLastBuffer = function()
+  if getBufferCount() <= 1 then
+    return ":q<CR>"
+  else
+    return ":bd<CR>"
   end
 end
 

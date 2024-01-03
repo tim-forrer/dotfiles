@@ -9,6 +9,7 @@ local plugins = {
   require("plugins.mason"),
   require("plugins.lsp"),
   require("plugins.fzf"),
+  require("plugins.text-case"),
   require("plugins.telescope"),
 }
 

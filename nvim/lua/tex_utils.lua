@@ -5,7 +5,7 @@ function tex_utils.in_mathzone()
 end
 
 function tex_utils.in_text()
-  return not in_mathzone()
+  return not tex_utils.in_mathzone()
 end
 
 function tex_utils.in_comment() -- comment detection
@@ -19,15 +19,15 @@ end
 
 -- A few concrete environments---adapt as needed
 function tex_utils.in_equation() -- equation environment detection
-  return in_env("equation")
+  return tex_utils.in_env("equation")
 end
 
 function tex_utils.in_itemize() -- itemize environment detection
-  return in_env("itemize")
+  return tex_utils.in_env("itemize")
 end
 
 function tex_utils.in_tikz() -- TikZ picture environment detection
-  return in_env("tikzpicture")
+  return tex_utils.in_env("tikzpicture")
 end
 
 function tex_utils.get_visual(args, parent)

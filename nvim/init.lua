@@ -1,7 +1,7 @@
 -- Options
 vim.opt.compatible = false -- disable compatibility to old-time vi
 vim.opt.showmatch = true -- show matching
-vim.opt.hlsearch = true -- highlight search
+vim.opt.hlsearch = false -- highlight search
 vim.opt.incsearch = true -- incremental search
 vim.opt.tabstop = 2 -- number of columns occupied by a tab
 vim.opt.softtabstop = 2 -- see multiple spaces as tabstops

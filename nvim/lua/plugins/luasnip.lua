@@ -10,6 +10,7 @@ M.load = function()
 
   -- Keybindings
   -- Seems quite hard to use Tab expansions using Lua directly.
+  local cmd = vim.cmd
   cmd([[
   " Use Tab to expand and jump through snippets
   imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
