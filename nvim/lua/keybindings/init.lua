@@ -74,5 +74,7 @@ keymap(
   "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
   opts
 )
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>o", "<cmd>Telescope lsp_definitions<CR>", opts)
+keymap("n", ",m", "<cmd>Telescope keymaps<CR>", opts)
+keymap("n", ",d", "<cmd>Telescope diagnostics<CR>", opts)

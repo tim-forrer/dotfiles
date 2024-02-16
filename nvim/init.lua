@@ -10,10 +10,12 @@ vim.opt.shiftwidth = 2 -- width for autoindents
 vim.opt.autoindent = true -- indent a new line the same amount as current line
 vim.opt.number = true -- add line numbers
 vim.opt.wildmode = "longest,list" -- get bash-like tab completions
-vim.opt.cc = "80" -- 80 width column border for good coding style
+vim.opt.colorcolumn = "80"
 vim.opt.clipboard = "unnamedplus" -- using system clipboard
 vim.opt.cursorline = true -- highlight current cursorline
 vim.opt.ttyfast = true -- Speed up scrolling in Vim
+vim.opt.breakindent = true
+vim.opt.linebreak = true
 
 -- Provider settings
 vim.g.loaded_ruby_provider = 0 -- disable ruby plugins

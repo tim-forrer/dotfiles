@@ -24,6 +24,9 @@ vim.g.neoformat_enabled_lua = { "stylua" }
 -- Latex
 vim.g.neoformat_enabled_tex = { "latexindent" }
 
+-- CSS
+vim.g.neoformat_enabled_css = { "prettierd" }
+
 -- Lazy config
 local M = {}
 M.lazy_config = { "sbdchd/neoformat" }

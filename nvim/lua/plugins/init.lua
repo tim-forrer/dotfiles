@@ -8,9 +8,10 @@ local plugins = {
   require("plugins.cmp"),
   require("plugins.mason"),
   require("plugins.lsp"),
-  require("plugins.fzf"),
+  require("plugins.telescope.fzf"),
   require("plugins.text-case"),
   require("plugins.telescope"),
+  require("plugins.telescope.luasnip"),
 }
 
 -- Build a table of the plugin config files

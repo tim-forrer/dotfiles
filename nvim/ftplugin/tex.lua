@@ -1,1 +1,1 @@
-vim.g.maplocalleader = ","
+vim.opt.colorcolumn = ""

@@ -14,6 +14,7 @@ M.load = function()
   local actions = require("telescope.actions")
   telescope.load_extension("fzf")
   telescope.load_extension("textcase")
+  telescope.load_extension("luasnip")
   telescope.setup({
     defaults = {
 
