@@ -1,0 +1,3 @@
+(defcfg
+  input (device-file "usb-060b-USB_Keyboard-event-kbd")
+  output (uinput-sink "KMonad kbd"))

@@ -21,7 +21,7 @@ vim.opt.linebreak = true
 vim.g.loaded_ruby_provider = 0 -- disable ruby plugins
 vim.g.loaded_perl_provider = 0 -- disable perl plugins
 vim.g.loaded_node_provider = 0 -- disable node plugins
-vim.g.python3_host_prog = "/Users/timforrer/.pyenv/versions/py3nvim/bin/python"
+vim.g.python3_host_prog = "/home/tim/.pyenv/versions/py3nvim/bin/python"
 
 -- Global settings
 vim.o.completeopt = "noselect"
