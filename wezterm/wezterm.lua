@@ -1,6 +1,7 @@
 local settings = {}
 settings[1] = require("appearance")
 settings[2] = require("keybindings")
+settings[3] = require("clipboard")
 
 local M = {}
 for _, elt in pairs(settings) do

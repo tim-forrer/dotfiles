@@ -3,14 +3,19 @@ local M = {
   -- Universal keybindings
   {
     key = "p",
-    mods = "SUPER",
+    mods = "CTRL",
     action = act.ActivateCommandPalette,
   },
   {
     key = "t",
-    mods = "SUPER",
+    mods = "CTRL",
     action = act.SpawnTab("CurrentPaneDomain"),
   },
-}
+  {
+    key = "w",
+    mods = "CTRL",
+    action = act.CloseCurrentTab { confirm = true },
+  },
 
+}
 return M
