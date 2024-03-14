@@ -12,6 +12,7 @@ local plugins = {
   require("plugins.text-case"),
   require("plugins.telescope"),
   require("plugins.telescope.luasnip"),
+  require("plugins.kmonad-vim"),
 }
 
 -- Build a table of the plugin config files
