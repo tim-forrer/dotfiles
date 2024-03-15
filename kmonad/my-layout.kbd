@@ -15,6 +15,35 @@
   ;; set this to false to disable any command-execution in kmonad
   allow-cmd true
 )
+
+(defsrc
+  esc       f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
+  caps a    o    e    u    i    d    h    t    n    s    -    ret
+  lsft ;    q    j    k    x    b    m    w    v    z    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(defalias ;; Commands
+  jpi (cmd-button "gdbus call --session --dest org.gnome.Shell --object-path /me/madhead/Shyriiwook --method me.madhead.Shyriiwook.activate 'mozc-jp'") ;; Input source JP
+  eni (cmd-button "gdbus call --session --dest org.gnome.Shell --object-path /me/madhead/Shyriiwook --method me.madhead.Shyriiwook.activate 'us+dvorak'") ;; Input source dvorak
+)
+
+(defalias ;; Window switching
+  wsr C-A-right
+  wsl C-A-left
+)
+
+(defalias ;; Layer switching
+  lctl (layer-toggle lctl)
+  rctl (layer-toggle rctl)
+  lsft (layer-toggle lsft)
+  rsft (layer-toggle rsft)
+  elct (tap-next-press esc @lctl)
+  rrct (tap-next-press ret @rctl)
+)
+
 #|--- Blank layer
 (deflayer
   _         _   _    _    _       _    _    _    _      _  _   _   _  
@@ -26,28 +55,48 @@
 )
 ---|#
 
-(defalias
-  cesc (tap-next-release esc lctl) ;; Esc if nothing else pressed, else CTL
-  cret (tap-next-release ret rctl) ;; Ret if nothing else pressed, else CTL
-  jpk (cmd-button "gdbus call --session --dest org.gnome.Shell --object-path /me/madhead/Shyriiwook --method me.madhead.Shyriiwook.activate 'mozc-jp'") ;; Input source JP
-  enk (cmd-button "gdbus call --session --dest org.gnome.Shell --object-path /me/madhead/Shyriiwook --method me.madhead.Shyriiwook.activate 'us+dvorak'") ;; Input source dvorak
-)
-
-(defsrc
-  esc       f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
-)
 
 (deflayer base
-  caps     f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cesc    a    s    d    f    g    h    j    k    l    ;    '   @cret 
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @jpk lmet lalt           spc            ralt rmet cmp  @enk
+  caps       f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  tab  '    ,    .    p    y    f    g    c    r    l    /    =    \
+  @elct a    o    e    u    i    d    h    t    n    s    -   @rrct 
+  @lsft ;    q    j    k    x    b    m    w    v    z    @rsft
+  @jpi lmet lalt           spc            ralt rmet cmp  @eni
 )
 
+(deflayer lctl
+  caps       f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
+  C-grv  C-1    C-2    C-3    C-4    C-5    C-6    C-7    C-8    C-9    C-0    C--    C-=    C-bspc
+  C-tab  C-'    C-,    C-.    C-p    C-y    C-f    C-g    C-c    C-r    C-l    C-/    C-=    C-\
+  _      C-a    C-o    C-e    C-u    C-i    C-d    C-h    C-t    C-n    C-s    C--   @wsr
+  C-lsft C-;    C-q    C-j    C-k    C-x    C-b    C-m    C-w    C-v    C-z    C-rsft
+  C-lctl C-lmet C-lalt           C-spc            C-ralt C-rmet C-cmp  C-rctl
+)
+
+(deflayer rctl
+  caps       f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
+  RC-grv  RC-1    RC-2    RC-3    RC-4    RC-5    RC-6    RC-7    RC-8    RC-9    RC-0    RC--    RC-=    RC-bspc
+  RC-tab  RC-'    RC-,    RC-.    RC-p    RC-y    RC-f    RC-g    RC-c    RC-r    RC-l    RC-/    RC-=    RC-\
+  @wsl RC-a    RC-o    RC-e    RC-u    RC-i    RC-d    RC-h    RC-t    RC-n    RC-s    RC--   _
+  RC-lsft RC-;    RC-q    RC-j    RC-k    RC-x    RC-b    RC-m    RC-w    RC-v    RC-z    RC-rsft
+  RC-lctl RC-lmet RC-lalt           RC-spc            RC-ralt RC-rmet RC-cmp  RC-rctl
+)
+
+(deflayer lsft
+  caps       f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
+  S-grv  S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S-9    S-0    S--    S-=    S-bspc
+  S-tab  S-'    S-,    S-.    S-p    S-y    S-f    S-g    S-c    S-r    S-l    S-/    S-=    S-\
+  S-lctl S-a    S-o    S-e    S-u    S-i    S-d    S-h    S-t    S-n    S-s    S--    S-rctl
+  S-lsft S-;    S-q    S-j    S-k    S-x    S-b    S-m    S-w    S-v    S-z    S-rsft
+  S-lctl S-lmet S-lalt           S-spc            S-ralt S-rmet S-cmp  S-rctl
+)
+
+(deflayer rsft
+  caps       f1  f2   f3   f4      f5   f6   f7   f8     f9 f10 f11 f12
+  RS-grv  RS-1    RS-2    RS-3    RS-4    RS-5    RS-6    RS-7    RS-8    RS-9    RS-0    RS--    RS-=    RS-bspc
+  RS-tab  RS-'    RS-,    RS-.    RS-p    RS-y    RS-f    RS-g    RS-c    RS-r    RS-l    RS-/    RS-=    RS-\
+  RS-lctl RS-a    RS-o    RS-e    RS-u    RS-i    RS-d    RS-h    RS-t    RS-n    RS-s    RS--    RS-rctl 
+  ~   RS-;    RS-q    RS-j    RS-k    RS-x    RS-b    RS-m    RS-w    RS-v    RS-z    RS-rsft
+  RS-lctl RS-lmet RS-lalt           RS-spc            RS-ralt RS-rmet RS-cmp  RS-rctl
+)
