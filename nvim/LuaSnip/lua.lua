@@ -41,7 +41,7 @@ return {
           {{ condition = tex_utils.in_mathzone }}
         ),
       ]=],
-      { vars.i(1), rep(1), i(2), i(3, "autosnippet"), rep(2), i(4) }
+      { vars.i(1), vars.rep(1), vars.i(2), vars.i(3, "autosnippet"), vars.rep(2), vars.i(4) }
     )
   ),
 }

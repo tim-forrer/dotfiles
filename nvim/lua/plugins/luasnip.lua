@@ -7,6 +7,7 @@ M.load = function()
     update_events = "TextChanged,TextChangedI",
   })
   require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
+  require("luasnip.loaders.from_vscode").lazy_load()
 
   -- Keybindings
   -- Seems quite hard to use Tab expansions using Lua directly.
@@ -28,6 +29,7 @@ M.lazy_config = {
   version = "v2.*",
   build = "make install_jsregexp",
   lazy = false,
+  dependencies = {"rafamadriz/friendly-snippets"},
 }
 
 return M
