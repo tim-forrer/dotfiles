@@ -59,17 +59,33 @@ return {
   -- Inline mathmode
   vars.s(
     {
-      trig = "([^%a])mm",
-      dscr = "Expands 'mm' into $$",
-      wordTrig = false,
-      regTrig = true,
+      trig = "mk",
+      dscr = "Expands 'mk' into $<>$",
+      snippetType = "autosnippet",
     },
-    vars.fmta("<>$<>$", {
-      vars.f(function(_, snip)
-        return snip.captures[1]
-      end),
-      vars.d(1, tex_utils.get_visual),
-    })
+    vars.fmta(
+      [[
+         $<>$
+       ]],
+      { vars.i(1) }
+    ),
+    {}
+  ),
+  vars.s(
+    {
+      trig = "km",
+      dscr = "Expands 'km' into $$<>$$",
+      snippetType = "autosnippet",
+    },
+    vars.fmta(
+      [[
+         $$
+           <>
+         $$
+       ]],
+      { vars.i(1) }
+    ),
+    {}
   ),
   vars.s(
     {

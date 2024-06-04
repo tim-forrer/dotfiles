@@ -45,6 +45,11 @@ M.key_table = {
   -- Tabs
   -- -- Creation and Deletion
   {
+    key = "t",
+    mods = "SHIFT",
+    action = act.SpawnTab("CurrentPaneDomain"),
+  },
+  {
     key = "x",
     mods = "SHIFT",
     action = act.CloseCurrentTab({ confirm = true }),
