@@ -1,105 +1,109 @@
-local tex_utils = require("ls_tex_utils")
-local vars = require("ls_variables")
+package.path = package.path .. ";/Users/timforrer/dotfiles/nvim/LuaSnip/?.lua"
+local globals = require("globals")
 
 return {
   -- Sections
-  vars.s(
+  globals.s(
     {
       trig = "sec",
       dscr = "Expands 'sec' into \\section",
       snippetType = "snippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \section{<>}
       ]],
-      { vars.i(1) }
+      { globals.i(1) }
     ),
     {}
   ),
-  vars.s(
+  globals.s(
     {
       trig = "ssec",
       dscr = "Expands 'ssec' into \\subsection",
       snippetType = "autosnippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \subsection{<>}
       ]],
-      { vars.i(1) }
+      { globals.i(1) }
     ),
     {}
   ),
 
   -- General environments
-  vars.s(
+  globals.s(
     { trig = "env", dscr = "Expands 'env' into some general environment" },
-    vars.fmta(
+    globals.fmta(
       [[
         \begin{<>}
           <>
         \end{<>}
       ]],
-      { vars.i(1), vars.i(2), vars.rep(1) }
+      { globals.i(1), globals.i(2), globals.rep(1) }
     )
   ),
-  vars.s(
-    { trig = "eq", dscr = "Expands 'eq' into an equation environment" },
-    vars.fmta(
+  globals.s(
+    {
+      trig = "def",
+      dscr = "Expands 'def' into definition environment",
+      snippetType = "snippet",
+    },
+    globals.fmta(
       [[
-        \begin{equation}
-          <>
-        \end{equation}
-      ]],
-      { vars.i(0) }
-    )
+         \begin{definition}[<>]
+            <>
+          \end{definition}
+       ]],
+      { globals.i(1), globals.i(2) }
+    ),
+    {}
   ),
-
   -- Inline mathmode
-  vars.s(
+  globals.s(
     {
       trig = "mk",
       dscr = "Expands 'mk' into $<>$",
       snippetType = "autosnippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
          $<>$
        ]],
-      { vars.i(1) }
+      { globals.i(1) }
     ),
     {}
   ),
-  vars.s(
+  globals.s(
     {
       trig = "km",
       dscr = "Expands 'km' into $$<>$$",
       snippetType = "autosnippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
          $$
            <>
          $$
        ]],
-      { vars.i(1) }
+      { globals.i(1) }
     ),
     {}
   ),
-  vars.s(
+  globals.s(
     {
       trig = "enu",
       dscr = "Expands 'enu' into a list environment",
       snippetType = "snippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \begin{enumerate}
           \item <>
         \end{enumerate}
       ]],
-      { vars.i(1, "First list item") }
+      { globals.i(1, "First list item") }
     )
   ),
 }

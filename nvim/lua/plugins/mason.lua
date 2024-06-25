@@ -3,6 +3,7 @@ local servers = {
   "hls",
   "pyright",
   "texlab",
+  "jsonls",
 }
 
 local settings = {

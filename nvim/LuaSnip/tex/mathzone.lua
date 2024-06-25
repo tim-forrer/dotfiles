@@ -1,153 +1,163 @@
-local tex_utils = require("ls_tex_utils")
-local vars = require("ls_variables")
+package.path = package.path .. ";../?.lua"
+local globals = require("globals")
 
 return {
-  vars.s(
-    { trig = "ff", dscr = "Expands 'ff' into '\\frac{}{} when in mathmode'" },
-    vars.fmta("\\frac{<>}{<>}", { vars.i(1), vars.i(2) }),
-    { condition = tex_utils.in_mathzone }
+  globals.s(
+    { trig = "(", dscr = "Expands '(' into (<>)", snippetType = "autosnippet" },
+    globals.fmta(
+      [[
+         (<>)
+       ]],
+      { globals.i(1) }
+    ),
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
+    { trig = "ff", dscr = "Expands 'ff' into '\\frac{}{} when in Mathmode'" },
+    globals.fmta("\\frac{<>}{<>}", { globals.i(1), globals.i(2) }),
+    { condition = globals.mathmode }
+  ),
+  globals.s(
     {
       trig = "lolli",
       dscr = "Expands 'lolli' into \\multimap",
       snippetType = "autosnippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \multimap 
       ]],
       {}
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "ox",
       dscr = "Expands 'ox' into \\otimes",
       snippetType = "autosnippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \otimes
       ]],
       {}
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "^",
       dscr = "Expands '^' into ^{ }",
       snippetType = "autosnippet",
       wordTrig = false,
     },
-    vars.fmta(
+    globals.fmta(
       [[
         ^{ <> }
       ]],
-      { vars.d(1, tex_utils.get_visual) }
+      { globals.d(1, Get_visual) }
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "iso",
       dscr = "Expands 'iso' into \\simeq",
       snippetType = "snippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \cong
       ]],
       {}
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "niso",
       dscr = "Expands 'niso' into \ncong",
       snippetType = "snippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \ncong
       ]],
       {}
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "->",
       dscr = "Expands '->' into \rightarrow",
       snippetType = "autosnippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \rightarrow
       ]],
       {}
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "star",
       dscr = "Expands 'star' into ^{*}",
       snippetType = "autosnippet",
       wordTrig = false,
     },
-    vars.fmta(
+    globals.fmta(
       [[
         ^{ * }
       ]],
       {}
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "prr",
       dscr = "Expands 'prr' into \\parr",
       snippetType = "autosnippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \parr
       ]],
       {}
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "_",
       dscr = "Expands '_' into _{ }",
       snippetType = "autosnippet",
       wordTrig = false,
     },
-    vars.fmta(
+    globals.fmta(
       [[
         _{ <> }
       ]],
-      { vars.i(1, "label") }
+      { globals.i(1, "label") }
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
-  vars.s(
+  globals.s(
     {
       trig = "cat",
       dscr = "Expands 'cat' into mathbf{}",
       snippetType = "snippet",
     },
-    vars.fmta(
+    globals.fmta(
       [[
         \mathbf{<>}
       ]],
-      { vars.i(1, "category") }
+      { globals.i(1, "category") }
     ),
-    { condition = tex_utils.in_mathzone }
+    { condition = globals.mathmode }
   ),
 }
