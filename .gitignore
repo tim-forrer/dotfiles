@@ -2,3 +2,6 @@
 *.db
 *.db*
 *.backup
+
+
+**/.DS_Store
