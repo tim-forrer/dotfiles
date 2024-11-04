@@ -66,15 +66,3 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Telescope
-keymap(
-  "n",
-  "<leader>f",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  opts
-)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<CR>", opts)
-keymap("n", "<leader>o", "<cmd>Telescope lsp_definitions<CR>", opts)
-keymap("n", ",m", "<cmd>Telescope keymaps<CR>", opts)
-keymap("n", ",d", "<cmd>Telescope diagnostics<CR>", opts)

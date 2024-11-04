@@ -1,24 +1,6 @@
 {
-  "LuaSnip": { "branch": "master", "commit": "8ae1dedd988eb56441b7858bd1e8554dfadaa46d" },
-  "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
-  "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
-  "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
-  "cmp-vimtex": { "branch": "master", "commit": "613fbfc54d9488252b0b0289d6d1d60242513558" },
-  "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
-  "kmonad-vim": { "branch": "master", "commit": "37978445197ab00edeb5b731e9ca90c2b141723f" },
-  "lazy.nvim": { "branch": "main", "commit": "83493db50a434a4c5c648faf41e2ead80f96e478" },
-  "mason-lspconfig.nvim": { "branch": "main", "commit": "55716a879568a498fa236593c8119789054a3b8e" },
-  "mason.nvim": { "branch": "main", "commit": "3b5068f0fc565f337d67a2d315d935f574848ee7" },
-  "neoformat": { "branch": "master", "commit": "b8e0baf965d2fbb173aabe3d847538744c0e321b" },
-  "nightfox": { "branch": "main", "commit": "e352a32e0f54feb2550ebdab815ae8f7f26ed63b" },
-  "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
-  "nvim-lspconfig": { "branch": "master", "commit": "1917b562a02f20885900b1da0f0ea25028ccedab" },
-  "nvim-treesitter": { "branch": "master", "commit": "488bec03254207b1dd071be8cb1fb78434b6e777" },
-  "plenary.nvim": { "branch": "master", "commit": "f7adfc4b3f4f91aab6caebf42b3682945fbc35be" },
-  "ripgrep": { "branch": "master", "commit": "e9abbc1a02de29dbe60e1b625d540c58759b23a6" },
-  "telescope-fzf-native.nvim": { "branch": "main", "commit": "9ef21b2e6bb6ebeaf349a0781745549bbb870d27" },
-  "telescope-luasnip.nvim": { "branch": "master", "commit": "2ef7da3a363890686dbaad18ddbf59177cfe4f78" },
-  "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
-  "text-case.nvim": { "branch": "main", "commit": "d62c63a4e9a996c7321885937ab89920fca2c1c8" },
-  "vimtex": { "branch": "master", "commit": "a77d14b2e4391c0d3e860708bb1fd56161ab68eb" }
+  "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
+  "lazy.nvim": { "branch": "main", "commit": "48b52b5cfcf8f88ed0aff8fde573a5cc20b1306d" },
+  "nightfox": { "branch": "main", "commit": "7557f26defd093c4e9bc17f28b08403f706f5a44" },
+  "vimtex": { "branch": "master", "commit": "539a203f19531c6b9d2d1b093ee8911fb7050bbc" }
 }

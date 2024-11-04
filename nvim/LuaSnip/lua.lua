@@ -1,55 +1,46 @@
-local globals = require("globals")
-
-return {
-  -- Quickly add snippets
-  globals.s(
-    { trig = "s(", dscr = "Expands 's(' into boilerplate snippet" },
-    globals.fmt(
-      [=[
-       globals.s( {{trig="{}", dscr="Expands '{}' into {}", snippetType = "{}"}},
-          vars.fmta(
-            [[
-              {}
-            ]],
-            {{ {} }}
-          ),
-          {{ {} }}
-        ),
-      ]=],
-      {
-        globals.i(1, "trigger"),
-        globals.rep(1),
-        globals.i(2),
-        globals.i(3, "autosnippet"),
-        globals.i(4),
-        globals.i(5, "nodes"),
-        globals.i(6, "condition = "),
-      }
-    )
-  ),
-
-  globals.s(
-    { trig = "mzone", dscr = "Expands 'mzone' into boilerplate snippet" },
-    globals.fmt(
-      [=[
-       globals.s( {{trig="{}", dscr="Expands '{}' into {}", snippetType = "{}"}},
+return{
+  s(
+    { trig = "s", dscr = "Expands 's' into snippet boilerplate" },
+    fmta(
+      [[
+        s(
+          {trig = "<>", dscr = "Expands '<>' into <>"},
           fmta(
-            [[
-              {}
-            ]],
-            {{ {} }}
-          ),
-          {{ condition = tex_utils.in_mathzone }}
+            <>,
+            { <> }
+          )
         ),
-      ]=],
+      ]],
       {
-        globals.i(1),
-        globals.rep(1),
-        globals.i(2),
-        globals.i(3, "autosnippet"),
-        globals.rep(2),
-        globals.i(4),
+        i(1, "Trigger"),
+        rep(1),
+        i(2, "Expanded snippet description"),
+        i(3, "Snippet string"),
+        i(4, "Nodes")
       }
     )
   ),
+  s(
+    { trig = "mzs", dscr = "Expands 's' into mathzone snippet boilerplate" },
+    fmta(
+      [[
+        s(
+          {trig = "<>", dscr = "Expands '<>' into <>"},
+          fmta(
+            <>,
+            { <> }
+          ),
+          { condition = in_mathzone }
+        ),
+      ]],
+      {
+        i(1, "Trigger"),
+        rep(1),
+        i(2, "Expanded snippet description"),
+        i(3, "Snippet string"),
+        i(4, "Nodes")
+      }
+    )
+  ),
+
 }

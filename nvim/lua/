@@ -1,7 +1,0 @@
-require("tokyonight").setup({
-  style = "night",
-  on_colors = function(colors)
-    colors.comment = "#d5e0c5" 
-  end
-})
-require("tokyonight").load()
