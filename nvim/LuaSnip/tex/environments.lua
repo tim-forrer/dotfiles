@@ -1,5 +1,20 @@
 local in_text = require("tex_utils").in_text
 
+local env = s({trig="env", snippetType="autosnippet"},
+  fmta(
+    [[
+      \begin{<>}
+          <>
+      \end{<>}
+    ]],
+    {
+      i(1),
+      i(2),
+      rep(1),  -- this node repeats insert node i(1)
+    }
+  )
+)
+
 -- Different environment snippets ultimately have the same structure,
 -- so this function easily produces the requisite snippets.
 local env_snippet = function(trig, name)
@@ -21,6 +36,7 @@ local env_snippet = function(trig, name)
 end
 
 return {
+  env,
   env_snippet("eq", "equation"),
   env_snippet("eqs", "equation*"),
   env_snippet("al", "align"),
