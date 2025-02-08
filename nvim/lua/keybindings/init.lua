@@ -12,12 +12,7 @@ vim.g.maplocalleader = ","
 -- Misc
 keymap("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>", opts)
 keymap("n", "<leader>w", ":w<CR>", opts)
-keymap(
-  "n",
-  "<leader>q",
-  utils.quitIfLastBuffer,
-  { noremap = true, silent = false, expr = true }
-)
+keymap("n", "<leader>q", ":q<CR>", opts)
 keymap("n", "<leader>s", "lxi<CR><ESC>", opts)
 
 -- Better window navigation
