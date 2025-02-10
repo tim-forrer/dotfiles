@@ -6,43 +6,52 @@ return {
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
+    require('mason').setup()
+    local mason_lspconfig = require("mason-lspconfig")
+    mason_lspconfig.setup ({
+      ensure_installed = { "pyright" },
+    })
+
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    require("mason-lspconfig").setup_handlers({
-      -- Default handler for all servers
-      function(server_name)
-        lspconfig[server_name].setup({})
-      end,
-    })
-
     lspconfig.pyright.setup({
       capabilities = capabilities,
-      settings = {
-        python = {
-          analysis = {
-            autoSearchPaths = true,
-            useLibraryCodeForTypes = true,
-          },
-        },
-      },
     })
 
-    -- Configure Lua Language Server (`lua_ls`) to recognize `vim` global
     lspconfig.lua_ls.setup({
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim" }, -- Allow `vim` global to prevent warnings
+      on_init = function(client)
+        if client.workspace_folders then
+          local path = client.workspace_folders[1].name
+          if path ~= vim.fn.stdpath('config') and (vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc')) then
+            return
+          end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+          runtime = {
+            -- Tell the language server which version of Lua you're using
+            -- (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT'
           },
+          -- Make the server aware of Neovim runtime files
           workspace = {
-            library = vim.api.nvim_get_runtime_file("", true), -- Make LSP aware of Neovim runtime
-            checkThirdParty = false, -- Disable third-party checks if unnecessary
-          },
-          telemetry = { enable = false }, -- Disable telemetry
-        },
-      },
-    })
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME,
+              -- Depending on the usage, you might want to add additional paths here.
+              "${3rd}/luv/library",
+              -- "${3rd}/busted/library",
+            }
+            -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
+            -- library = vim.api.nvim_get_runtime_file("", true)
+          }
+        })
+    end,
+    settings = {
+      Lua = {},
+    },
+  })
   end,
 }
