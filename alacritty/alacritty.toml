@@ -4,4 +4,4 @@ import = [
 ]
 
 [terminal.shell]
-program = "/opt/homebrew/bin/tmux"
+program = "tmux"
