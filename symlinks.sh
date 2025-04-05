@@ -2,6 +2,15 @@
 DOTFILES="$HOME/dotfiles"
 DOTCONFIG="$HOME/.config"
 
-ln -s "$DOTFILES/nvim" "$DOTCONFIG"
-ln -s "$DOTFILES/darktable" "$DOTCONFIG"
-ln -s "$DOTFILES/alacritty" "$DOTCONFIG"
+link() {
+  mkdir -p "$(dirname "$2")"
+  if [ ! -L "$2" ] || [ "$(readlink "$2")" != "$1" ]; then
+    ln -sf "$1" "$2"
+    echo "Linked $2 → $1"
+  else
+    echo "$2 already correctly linked"
+  fi
+}
+
+link "$DOTFILES/nvim" "$DOTCONFIG/nvim"
+link "$DOTFILES/alacritty" "$DOTCONFIG/alacritty"
