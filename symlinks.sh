@@ -14,3 +14,4 @@ link() {
 
 link "$DOTFILES/nvim" "$DOTCONFIG/nvim"
 link "$DOTFILES/alacritty" "$DOTCONFIG/alacritty"
+link "$DOTFILES/tmux" "$DOTCONFIG/tmux"
