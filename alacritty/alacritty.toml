@@ -6,3 +6,10 @@ import = [
 [terminal.shell]
 program = "/bin/zsh"
 args = ["-l", "-c", "tmux attach || tmux"]
+
+[font]
+size = 14.0
+
+[font.offset]
+x = 2
+y = 1
