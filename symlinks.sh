@@ -15,4 +15,4 @@ link() {
 link "$DOTFILES/nvim" "$DOTCONFIG/nvim"
 link "$DOTFILES/alacritty" "$DOTCONFIG/alacritty"
 link "$DOTFILES/tmux" "$DOTCONFIG/tmux"
-link "$DOTFILES/zshrc" "/Users/timforrer/.zshrc"
+ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
