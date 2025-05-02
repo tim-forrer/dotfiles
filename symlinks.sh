@@ -15,4 +15,5 @@ link() {
 link "$DOTFILES/nvim" "$DOTCONFIG/nvim"
 link "$DOTFILES/alacritty" "$DOTCONFIG/alacritty"
 link "$DOTFILES/tmux" "$DOTCONFIG/tmux"
+link "$DOTFILES/karabiner" "$DOTCONFIG/karabiner"
 ln -s "$DOTFILES/zshrc" "$HOME/.zshrc"
