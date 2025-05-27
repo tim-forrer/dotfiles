@@ -2,6 +2,6 @@
 *.db
 *.db*
 *.backup
-
+karabiner/automatic_backups
 
 **/.DS_Store
