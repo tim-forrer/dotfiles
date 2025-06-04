@@ -1,0 +1,12 @@
+modmap:
+  - name: CTRL modifiers
+    remap:
+      CAPSLOCK:
+        held: LEFTCTRL
+        alone: ESC
+      ENTER:
+        held: RIGHTCTRL
+        alone: ENTER
+      # LEFTCTRL: TOGGLE INPUT LANGUAGE
+      RIGHTCTRL: KATAKANAHIRAGANA
+      ESC: CAPSLOCK
