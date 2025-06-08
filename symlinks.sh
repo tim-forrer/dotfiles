@@ -16,10 +16,9 @@ link "$DOTFILES/nvim" "$DOTCONFIG/nvim"
 link "$DOTFILES/alacritty" "$DOTCONFIG/alacritty"
 link "$DOTFILES/tmux" "$DOTCONFIG/tmux"
 
-# Macos only links
-if [ "$(uname -s)" = "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then  # MacOS links
 	link "$DOTFILES/karabiner" "$DOTCONFIG/karabiner"
-	link "$DOTFILES/zshrc" "$HOME/.zshrc"
-else
+	link "$DOTFILES/zsh/zshrc" "$HOME/.zshrc"
+else  # Linux links
   link "$DOTFILES/xremap" "$DOTCONFIG/xremap"
 fi
