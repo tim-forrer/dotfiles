@@ -8,7 +8,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "return",
+                                    "key_code": "return_or_enter",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -17,7 +17,7 @@
                                         "lazy": true
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "return" }],
+                                "to_if_alone": [{ "key_code": "return_or_enter" }],
                                 "type": "basic"
                             }
                         ]
