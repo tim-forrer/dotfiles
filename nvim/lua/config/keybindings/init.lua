@@ -1,4 +1,4 @@
-local utils = require("keybindings.utils")
+local utils = require("config.keybindings.utils")
 
 -- Default options
 local keymap = vim.keymap.set
