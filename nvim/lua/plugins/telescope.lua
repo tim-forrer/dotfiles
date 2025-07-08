@@ -4,11 +4,8 @@ return {
 	version = false,
 	dependencies = { "nvim-lua/plenary.nvim" },
 	keys = {
-		{ "<leader>sf", "<cmd>Telescope git_files<cr>", desc = "Find Files (root dir)" },
-		{ "<leader><space>", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+		{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
 		{ "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Search Project" },
-		{ "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Search Document Symbols" },
-		{ "<leader>sw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Search Workspace Symbols" },
 	},
 	opts = {
 		extensions = {
