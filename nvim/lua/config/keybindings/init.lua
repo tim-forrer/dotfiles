@@ -13,15 +13,12 @@ vim.g.maplocalleader = ","
 keymap("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>", opts)
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
-keymap("n", "<leader>s", "lxi<CR><ESC>", opts)
 
 -- Better window navigation
 keymap("n", "<leader>h", "<C-w>h", opts)
 keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
-
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -38,12 +35,7 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
-keymap(
-  "i",
-  "<CR>",
-  utils.replaceBlankCommentLine,
-  { noremap = true, silent = false, expr = true }
-)
+keymap("i", "<CR>", utils.replaceBlankCommentLine, { noremap = true, silent = false, expr = true })
 
 -- Visual --
 -- Stay in indent mode

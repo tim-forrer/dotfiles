@@ -21,7 +21,7 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
-		keymap = { preset = "super-tab" },
+		keymap = { preset = "default" },
 
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -37,8 +37,9 @@ return {
 		sources = {
 			default = { "lsp", "path", "buffer" },
 			per_filetype = {
-				markdown = { "lsp", "path", "emoji" },
-				gitcommit = { inherit_defaults = true, "emoji" },
+				gitcommit = { "emoji", "path" },
+				markdown = { "path", "buffer", "emoji" },
+				lua = { inherit_defaults = true, "lazydev" },
 			},
 			providers = {
 				-- Emoji autocompletion
@@ -53,9 +54,11 @@ return {
 							return { ":" }
 						end,
 					},
-					should_show_items = function()
-						return vim.tbl_contains({ "gitcommit", "markdown" }, vim.o.filetype)
-					end,
+				},
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					score_offset = 20,
 				},
 			},
 		},
