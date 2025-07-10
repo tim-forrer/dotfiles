@@ -2,6 +2,8 @@
 DOTFILES="$HOME/dotfiles"
 DOTCONFIG="$HOME/.config"
 
+apps=("nvim" "wezterm")
+
 link() {
   mkdir -p "$(dirname "$2")"
   if [ ! -L "$2" ] || [ "$(readlink "$2")" != "$1" ]; then
@@ -12,9 +14,9 @@ link() {
   fi
 }
 
-link "$DOTFILES/nvim" "$DOTCONFIG/nvim"
-link "$DOTFILES/alacritty" "$DOTCONFIG/alacritty"
-link "$DOTFILES/tmux" "$DOTCONFIG/tmux"
+for app in "${apps[@]}"; do
+    link "$DOTFILES/$app" "$DOTCONFIG/$app"
+done
 
 if [ "$(uname -s)" = "Darwin" ]; then  # MacOS links
 	link "$DOTFILES/karabiner" "$DOTCONFIG/karabiner"
