@@ -1,5 +1,8 @@
 return {
 	"saghen/blink.cmp",
+	dependencies = {
+		"moyiz/blink-emoji.nvim",
+	},
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
 
@@ -23,7 +26,7 @@ return {
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 			-- Adjusts spacing to ensure icons are aligned
-			nerd_font_variant = "mono",
+			nerd_font_variant = "normal",
 		},
 
 		-- (Default) Only show the documentation popup when manually triggered
@@ -33,6 +36,28 @@ return {
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = { "lsp", "path", "buffer" },
+			per_filetype = {
+				markdown = { "lsp", "path", "emoji" },
+				gitcommit = { inherit_defaults = true, "emoji" },
+			},
+			providers = {
+				-- Emoji autocompletion
+				emoji = {
+					name = "Emoji",
+					module = "blink-emoji",
+					score_offset = 15, -- Tune by preference
+					opts = {
+						insert = true, -- Insert emoji (default) or complete its name
+						---@type string|table|fun():table
+						trigger = function()
+							return { ":" }
+						end,
+					},
+					should_show_items = function()
+						return vim.tbl_contains({ "gitcommit", "markdown" }, vim.o.filetype)
+					end,
+				},
+			},
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
