@@ -2,6 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"moyiz/blink-emoji.nvim",
+		"MahanRahmati/blink-nerdfont.nvim",
 	},
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -38,15 +39,14 @@ return {
 			default = { "lsp", "path", "buffer" },
 			per_filetype = {
 				gitcommit = { "emoji", "path" },
-				markdown = { "path", "buffer", "emoji" },
+				markdown = { "path", "buffer", "emoji", "nerdfont" },
 				lua = { inherit_defaults = true, "lazydev" },
 			},
 			providers = {
-				-- Emoji autocompletion
 				emoji = {
 					name = "Emoji",
 					module = "blink-emoji",
-					score_offset = 15, -- Tune by preference
+					score_offset = 15,
 					opts = {
 						insert = true, -- Insert emoji (default) or complete its name
 						---@type string|table|fun():table
@@ -59,6 +59,12 @@ return {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
 					score_offset = 20,
+				},
+				nerdfont = {
+					module = "blink-nerdfont",
+					name = "Nerd Fonts",
+					score_offset = 10,
+					opts = { insert = true },
 				},
 			},
 		},
