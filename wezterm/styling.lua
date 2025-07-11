@@ -25,14 +25,14 @@ module.colors = {
 module.enable_tab_bar = true
 module.use_fancy_tab_bar = false
 module.show_new_tab_button_in_tab_bar = false
-module.tab_bar_at_bottom = true
+module.tab_bar_at_bottom = false
 
 -- Font
 module.font = wezterm.font("Mononoki Nerd Font Mono")
 module.font_size = 18.0
 
 -- Callbacks
-local function tab_title(tab, panes)
+local function tab_title(tab)
 	local tab_text = tab.active_pane.title
 	if not tab.is_active then
 		tab_text = tab.tab_index + 1 .. "." .. tab_text
@@ -46,7 +46,7 @@ end
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 	return {
-		{ Text = tab_title(tab, panes) },
+		{ Text = tab_title(tab) },
 	}
 end)
 

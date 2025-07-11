@@ -4,7 +4,10 @@ return {
 	---@type snacks.Config
 	opts = {
 		picker = { enabled = true },
-		image = { enabled = true },
+		image = {
+			doc = { enabled = true, inline = false, max_width = 20, max_height = 20 },
+			math = { enabled = false },
+		},
 		indent = { enabled = true },
 	},
 	lazy = false,
