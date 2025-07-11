@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	version = "*",
 	opts = {
-		size = 10,
+		size = 15,
 		open_mapping = "<leader>t",
 	},
 }
