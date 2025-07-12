@@ -27,7 +27,7 @@ vim.g.python3_host_prog = "/Users/timforrer/.pyenv/versions/py3nvim/bin/python"
 -- Global settings
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.encoding = "utf-8"
-vim.o.wrap = false
+vim.o.wrap = true
 
 -- Diagnostics
 vim.diagnostic.config({
