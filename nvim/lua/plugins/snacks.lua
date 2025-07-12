@@ -10,6 +10,7 @@ return {
 		},
 		indent = { enabled = true },
 		lazygit = { enabled = true },
+		input = { enabled = true },
 	},
 	lazy = false,
 	priority = 1000,
