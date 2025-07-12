@@ -19,14 +19,14 @@ return {
 			function()
 				Snacks.picker.smart()
 			end,
-			desc = "Find files",
+			desc = "Smart find files",
 		},
 		{
 			"<leader>/",
 			function()
 				Snacks.picker.grep()
 			end,
-			desc = "Find files",
+			desc = "Find in files with grep",
 		},
 		{
 			"<leader>ff",
@@ -40,14 +40,21 @@ return {
 			function()
 				Snacks.picker.recent()
 			end,
-			desc = "Recent",
+			desc = "Find from recent files",
 		},
 		{
 			"<leader>sk",
 			function()
 				Snacks.picker.keymaps()
 			end,
-			desc = "Recent",
+			desc = "Find from keymaps",
+		},
+		{
+			"<leader>lg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Open Lazygit",
 		},
 	},
 }
