@@ -36,11 +36,19 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "buffer" },
+			-- https://cmp.saghen.dev/recipes.html#dynamically-picking-providers-by-treesitter-node-filetype
+			default = function()
+				local cmp_table = { "lsp", "path", "buffer" }
+				local filetype = vim.bo.filetype
+				if filetype == "lua" then
+					table.insert(cmp_table, "lazydev")
+				elseif filetype == "markdown" then
+					cmp_table = { "buffer", "emoji", "nerdfont" }
+				end
+				return cmp_table
+			end,
 			per_filetype = {
-				gitcommit = { "emoji", "path" },
-				markdown = { "path", "buffer", "emoji", "nerdfont" },
-				lua = { inherit_defaults = true, "lazydev" },
+				markdown = { "emoji", "nerdfont" },
 			},
 			providers = {
 				emoji = {
@@ -58,11 +66,11 @@ return {
 				lazydev = {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
-					score_offset = 20,
+					score_offset = 100,
 				},
 				nerdfont = {
-					module = "blink-nerdfont",
 					name = "Nerd Fonts",
+					module = "blink-nerdfont",
 					score_offset = 10,
 					opts = { insert = true },
 				},
