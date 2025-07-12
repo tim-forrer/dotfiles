@@ -9,6 +9,7 @@ return {
 			math = { enabled = false },
 		},
 		indent = { enabled = true },
+		lazygit = { enabled = true },
 	},
 	lazy = false,
 	priority = 1000,
