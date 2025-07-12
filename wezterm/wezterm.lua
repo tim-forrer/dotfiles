@@ -5,10 +5,12 @@ local c = wezterm.config_builder()
 -- Each must have a ".apply_to_config()" defined
 local keymaps = require("keymaps")
 local styling = require("styling")
+local multiplexing = require("multiplexing")
 
 local config_files = {
 	keymaps,
 	styling,
+	multiplexing,
 }
 
 for _, config_file in ipairs(config_files) do
