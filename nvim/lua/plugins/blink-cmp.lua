@@ -47,9 +47,6 @@ return {
 				end
 				return cmp_table
 			end,
-			per_filetype = {
-				markdown = { "emoji", "nerdfont" },
-			},
 			providers = {
 				emoji = {
 					name = "Emoji",
