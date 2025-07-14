@@ -5,7 +5,21 @@ return {
 	opts = {
 		picker = { enabled = true },
 		image = {
-			doc = { enabled = true, inline = false, max_width = 20, max_height = 20 },
+			doc = {
+				enabled = true,
+				inline = false,
+				float = true,
+				max_width = 80,
+				max_height = 40,
+				-- Set to `true`, to conceal the image text when rendering inline.
+				-- (experimental)
+				---@param lang string tree-sitter language
+				---@param type snacks.image.Type image type
+				conceal = function(lang, type)
+					-- only conceal math expressions
+					return type == "math"
+				end,
+			},
 			math = { enabled = false },
 		},
 		indent = { enabled = true },
