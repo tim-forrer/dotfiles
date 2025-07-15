@@ -5,5 +5,5 @@ return {
 	opts = snacks_config.opts,
 	lazy = false,
 	priority = 1000,
-	keys = snacks_config.keys,
+	keys = require("config.keybindings.snacks"),
 }

@@ -1,5 +1,5 @@
 local configure_mini = function()
-	local mini_config = require("mini_nvim")
+	local mini_config = require("mini_config")
 	for _, module in ipairs(mini_config.module_list) do
 		if mini_config[module] ~= nil then
 			require("mini." .. module).setup(mini_config[module])
@@ -15,20 +15,5 @@ return {
 	version = false,
 	lazy = false,
 	config = configure_mini,
-	keys = {
-		{
-			"<leader>mf",
-			function()
-				MiniFiles.open()
-			end,
-			desc = "Open MiniFile explorer",
-		},
-		{
-			"<leader>pf",
-			function()
-				MiniPick.builtin.files()
-			end,
-			desc = "Pick from files",
-		},
-	},
+	keys = require("config.keybindings.mini"),
 }

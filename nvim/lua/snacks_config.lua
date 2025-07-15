@@ -6,16 +6,6 @@ M.module_list = {
 	"indent",
 }
 
-M.keys = {
-	{
-		"<leader>lg",
-		function()
-			Snacks.lazygit.open()
-		end,
-		desc = "Open Lazygit",
-	},
-}
-
 M.opts = {}
 M.opts.image = {
 	math = { enabled = false },
