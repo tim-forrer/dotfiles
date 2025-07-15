@@ -1,4 +1,5 @@
--- lazy.nvim
+local snacks_config = require("snacks_config")
+
 return {
 	"folke/snacks.nvim",
 	---@type snacks.Config
@@ -11,14 +12,6 @@ return {
 				float = true,
 				max_width = 80,
 				max_height = 40,
-				-- Set to `true`, to conceal the image text when rendering inline.
-				-- (experimental)
-				---@param lang string tree-sitter language
-				---@param type snacks.image.Type image type
-				conceal = function(lang, type)
-					-- only conceal math expressions
-					return type == "math"
-				end,
 			},
 			math = { enabled = false },
 		},
@@ -28,4 +21,5 @@ return {
 	},
 	lazy = false,
 	priority = 1000,
+	keys = snacks_config.keys,
 }

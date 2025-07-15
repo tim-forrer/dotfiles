@@ -1,11 +1,11 @@
 local configure_mini = function()
 	local mini_config = require("mini_nvim")
 	for _, module in ipairs(mini_config.module_list) do
-		local opts = {}
 		if mini_config[module] ~= nil then
-			opts = mini_config[module]
+			require("mini." .. module).setup(mini_config[module])
+		else
+			require("mini." .. module).setup()
 		end
-		require("mini." .. module).setup(opts)
 	end
 end
 
