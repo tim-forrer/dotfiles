@@ -8,7 +8,6 @@ M.module_list = {
 	"extra",
 	"files",
 	"git",
-	-- "hues",
 	"icons",
 	"operators",
 	"pick",

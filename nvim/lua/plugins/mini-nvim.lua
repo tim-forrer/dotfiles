@@ -7,6 +7,7 @@ local configure_mini = function()
 			require("mini." .. module).setup()
 		end
 	end
+	vim.cmd("color minisummer")
 end
 
 return {
