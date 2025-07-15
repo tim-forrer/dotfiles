@@ -17,7 +17,7 @@ vim.lsp.config.lua_ls = {
 				version = "LuaJIT",
 			},
 			diagnostics = {
-				globals = { "vim", "Snacks", "MiniExtra", "MiniPick", "MiniFiles" },
+				globals = { "vim", "Snacks", "MiniExtra", "MiniPick", "MiniFiles", "MiniBufremove" },
 			},
 		},
 	},
