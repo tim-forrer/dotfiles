@@ -1,3 +1,6 @@
+config-file = keys.config
+
+theme = dawnfox
+
 font-family = Mononoki Nerd Font Mono
 font-size = 20
-theme = dawnfox

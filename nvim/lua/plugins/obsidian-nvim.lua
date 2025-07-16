@@ -34,7 +34,6 @@ return {
 
 	opts = {
 		log_level = vim.log.levels.INFO,
-		ui = { enable = false }, -- use render-markdown instead
 		legacy_commands = false,
 
 		dir = "~/the-forrerst/",
@@ -65,6 +64,15 @@ return {
 			blink = true,
 			min_chars = 2,
 			create_new = true,
+		},
+
+		ui = {
+			enable = false,
+			checkboxes = {
+				[" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+				["x"] = { char = "", hl_group = "ObsidianDone" },
+				["-"] = { char = "󰥔", hl_group = "ObsidianImportant" },
+			},
 		},
 	},
 }

@@ -56,7 +56,7 @@ return {
 		desc = "Pick from all references to the symbol under the cursor",
 	},
 	{
-		"<space>bd",
+		"<space>x",
 		function()
 			MiniBufremove.delete()
 		end,

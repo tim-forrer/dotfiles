@@ -1,6 +1,6 @@
 return {
 	{
-		"<leader>lg",
+		"<space>lg",
 		function()
 			Snacks.lazygit.open()
 		end,
