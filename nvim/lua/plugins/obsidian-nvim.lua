@@ -27,7 +27,7 @@ return {
 		-- Required.
 		"nvim-lua/plenary.nvim",
 		"Saghen/blink.cmp",
-		"folke/snacks.nvim",
+		"echasnovski/mini.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"MeanderingProgrammer/render-markdown.nvim",
 	},
@@ -57,7 +57,7 @@ return {
 		preferred_link_style = "wiki",
 		disable_frontmatter = false,
 
-		picker = { name = "snacks.pick" },
+		picker = { name = "mini.pick" },
 		sort_by = "modified",
 		sort_reversed = true,
 
