@@ -2,7 +2,7 @@
 DOTFILES="$HOME/dotfiles"
 DOTCONFIG="$HOME/.config"
 
-apps=("nvim" "wezterm")
+apps=("nvim" "wezterm" "ghostty")
 
 link() {
   mkdir -p "$(dirname "$2")"
