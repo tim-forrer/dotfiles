@@ -9,8 +9,16 @@ return {
 		latex = { enabled = true },
 		preset = "obsidian",
 		checkbox = {
+			checked = {
+				scope_highlight = "@markup.strikethrough",
+			},
 			custom = {
-				todo = { raw = "[-]", rendered = "󰥔", highlight = "RenderMarkdownTodo", scope_highlight = nil },
+				abandoned = {
+					raw = "[-]",
+					rendered = "󰍵",
+					highlight = "NonText",
+					scope_highlight = "NonText",
+				},
 			},
 		},
 	},

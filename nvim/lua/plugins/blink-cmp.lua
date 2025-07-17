@@ -19,7 +19,7 @@ local cmp_sources = {
 		nerdfont = {
 			name = "Nerd Fonts",
 			module = "blink-nerdfont",
-			score_offset = 10,
+			score_offset = 14,
 			opts = { insert = true },
 		},
 	},

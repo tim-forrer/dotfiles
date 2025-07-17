@@ -4,6 +4,7 @@ M.module_list = {
 	"image",
 	"lazygit",
 	"indent",
+	"input",
 }
 
 M.opts = {}
