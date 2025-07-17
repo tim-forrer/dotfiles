@@ -18,6 +18,17 @@ local generate_note_id = function(title)
 	return tostring(os.time()) .. "-" .. suffix
 end
 
+local generate_note_frontmatter = function(note)
+	local out = { aliases = note.aliases, tags = note.tags }
+
+	if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+		for k, v in pairs(note.metadata) do
+			out[k] = v
+		end
+	end
+	return out
+end
+
 return {
 	"obsidian-nvim/obsidian.nvim",
 	version = "*",
@@ -40,6 +51,7 @@ return {
 		notes_subdir = "Zettelkasten",
 		new_notes_location = "notes_subdir",
 		note_id_func = generate_note_id,
+		note_frontmatter_func = generate_note_frontmatter,
 		workspaces = {
 			{
 				name = "the-forrerst",
@@ -50,6 +62,7 @@ return {
 			folder = "Journal",
 			date_format = "%Y-%m-%d",
 			alias_format = "%B %-d %Y",
+			template = "daily_template.md",
 		},
 
 		wiki_link_func = "use_alias_only",
