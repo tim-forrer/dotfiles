@@ -5,6 +5,7 @@ M.module_list = {
 	"lazygit",
 	"indent",
 	"input",
+	"pick",
 }
 
 M.opts = {}

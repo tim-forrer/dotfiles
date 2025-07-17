@@ -13,7 +13,7 @@ M.module_list = {
 	"icons",
 	"operators",
 	"pairs",
-	"pick",
+	-- "pick",
 	"statusline",
 	"surround",
 	"tabline",

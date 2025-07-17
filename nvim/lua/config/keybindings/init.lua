@@ -14,8 +14,8 @@ keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<leader>l", ":bnext<CR>", opts)
-keymap("n", "<leader>h", ":bprevious<CR>", opts)
+keymap("n", "<C-Tab>", ":bnext<CR>", opts)
+keymap("n", "<C-S-Tab>", ":bprevious<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
