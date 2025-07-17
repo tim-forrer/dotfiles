@@ -4,9 +4,8 @@ return {
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
 	opts = {
-		enabled = true,
 		completions = { blink = { enabled = true } },
-		latex = { enabled = true },
+		latex = { enabled = false },
 		preset = "obsidian",
 		checkbox = {
 			checked = {
