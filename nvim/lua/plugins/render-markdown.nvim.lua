@@ -14,6 +14,7 @@ return {
 		},
 		latex = { enabled = false },
 		preset = "none",
+		heading = { sign = false },
 		bullet = {
 			icons = { "", "", "󰨓", "󰨔" },
 		},
