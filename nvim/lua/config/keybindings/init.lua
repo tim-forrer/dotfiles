@@ -1,5 +1,3 @@
-local utils = require("config.keybindings.utils")
-
 -- Default options
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = false }
@@ -14,8 +12,8 @@ keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>q", ":q<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-Tab>", ":bnext<CR>", opts)
-keymap("n", "<C-S-Tab>", ":bprevious<CR>", opts)
+keymap("n", "<C-S-l>", ":bnext<CR>", opts)
+keymap("n", "<C-S-h>", ":bprevious<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode

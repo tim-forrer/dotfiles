@@ -9,7 +9,7 @@ return {
 	{
 		"<space>pc",
 		function()
-			Snacks.picker.command()
+			Snacks.picker.commands()
 		end,
 		desc = "Pick from commands",
 	},
@@ -23,7 +23,11 @@ return {
 	{
 		"<space>e",
 		function()
-			Snacks.picker.explorer()
+			local opts = {
+				autoclose = true,
+				layout = { preview = true },
+			}
+			Snacks.picker.explorer(opts)
 		end,
 		desc = "Open file explorer",
 	},
