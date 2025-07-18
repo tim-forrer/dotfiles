@@ -79,6 +79,10 @@ return {
 			create_new = true,
 		},
 
+		templates = {
+			folder = "Templates",
+		},
+
 		ui = {
 			enable = false,
 			checkboxes = {
