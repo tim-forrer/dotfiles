@@ -1,5 +1,12 @@
 return {
 	{
+		"<space>s",
+		function()
+			Snacks.picker.smart()
+		end,
+		desc = "Smart picker",
+	},
+	{
 		"<space>lg",
 		function()
 			Snacks.lazygit.open()
@@ -21,13 +28,9 @@ return {
 		desc = "Pick from diagnostics",
 	},
 	{
-		"<space>e",
+		"<space><space>",
 		function()
-			local opts = {
-				autoclose = true,
-				layout = { preview = true },
-			}
-			Snacks.picker.explorer(opts)
+			Snacks.explorer()
 		end,
 		desc = "Open file explorer",
 	},
