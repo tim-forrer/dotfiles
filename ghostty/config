@@ -2,7 +2,5 @@ config-file = keys.config
 
 theme = dawnfox
 
-font-family = Mononoki Nerd Font Mono
-font-size = 20
-
-
+font-family = UDEV Gothic 35NFLG
+font-size = 18
