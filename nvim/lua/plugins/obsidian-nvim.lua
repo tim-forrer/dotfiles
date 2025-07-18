@@ -32,7 +32,7 @@ end
 return {
 	"obsidian-nvim/obsidian.nvim",
 	version = "*",
-	lazy = true,
+	lazy = false,
 	ft = "markdown",
 	dependencies = {
 		-- Required.

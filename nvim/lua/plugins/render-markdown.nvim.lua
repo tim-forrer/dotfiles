@@ -4,10 +4,21 @@ return {
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
 	opts = {
-		completions = { blink = { enabled = true } },
+		completions = {
+			blink = { enabled = true },
+			filter = { -- HACK: Have to filter else it's still passed to completion
+				checkbox = function(value)
+					return value.rendered ~= "󰥔 "
+				end,
+			},
+		},
 		latex = { enabled = false },
-		preset = "obsidian",
+		preset = "none",
+		bullet = {
+			icons = { "", "", "󰨓", "󰨔" },
+		},
 		checkbox = {
+			right_pad = 1,
 			checked = {
 				scope_highlight = "@markup.strikethrough",
 			},

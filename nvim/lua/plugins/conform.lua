@@ -8,7 +8,6 @@ local conform_opts = {
 			"ruff_organize_imports",
 		},
 		rust = { "rustfmt" },
-		markdown = { "mdslw" },
 	},
 	-- Set default options
 	default_format_opts = {
