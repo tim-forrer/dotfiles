@@ -1,12 +1,12 @@
 local M = {}
 
 M.module_list = {
+	"dim",
 	"image",
-	"lazygit",
 	"indent",
 	"input",
+	"lazygit",
 	"pick",
-	"dim",
 	"picker",
 }
 
@@ -24,9 +24,7 @@ M.opts.image = {
 
 M.opts.explorer = { replace_netrw = true }
 
-M.opts.picker = {
-	sources = {},
-}
+M.opts.picker = { sources = {} }
 M.opts.picker.sources.explorer = {
 	autoclose = true,
 	layout = { preview = true },
