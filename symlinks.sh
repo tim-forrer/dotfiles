@@ -2,7 +2,7 @@
 DOTFILES="$HOME/dotfiles"
 DOTCONFIG="$HOME/.config"
 
-apps=("nvim" "wezterm" "ghostty")
+apps=("nvim" "lazygit" "ghostty")
 
 link() {
   mkdir -p "$(dirname "$2")"
@@ -21,6 +21,7 @@ done
 if [ "$(uname -s)" = "Darwin" ]; then  # MacOS links
 	link "$DOTFILES/karabiner" "$DOTCONFIG/karabiner"
 	link "$DOTFILES/zsh/zshrc" "$HOME/.zshrc"
+	link "$DOTFILES/zsh/zshenv" "$HOME/.zshenv"
 else  # Linux links
   link "$DOTFILES/xremap" "$DOTCONFIG/xremap"
 fi
