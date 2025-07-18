@@ -26,8 +26,7 @@ M.opts.explorer = { replace_netrw = true }
 
 M.opts.picker = { sources = {} }
 M.opts.picker.sources.explorer = {
-	autoclose = true,
-	layout = { preview = true },
+	layout = { preset = "default", preview = true },
 }
 
 M.opts.dim = {
