@@ -1,7 +1,7 @@
 local M = {}
 
 M.module_list = {
-	"dim",
+	-- "dim",
 	"image",
 	"indent",
 	"input",

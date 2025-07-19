@@ -5,7 +5,6 @@ return {
 	config = function()
 		local snacks = require("snacks")
 		snacks.setup(snacks_config.opts)
-		snacks.dim()
 	end,
 	lazy = false,
 	priority = 1000,
