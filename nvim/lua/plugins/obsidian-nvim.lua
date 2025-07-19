@@ -1,5 +1,3 @@
----@param title string|?
----@return string
 local generate_note_id = function(title)
 	-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
 	-- In this case a note with the title 'My new note' will be given an ID that looks
@@ -29,6 +27,29 @@ local generate_note_frontmatter = function(note)
 	return out
 end
 
+local daily_notes = {
+	folder = "Journal",
+	date_format = "%Y-%m-%d",
+	alias_format = "%B %-d %Y",
+	template = "daily_template.md",
+}
+
+local workspaces = {
+	{
+		name = "the-forrerst",
+		path = "~/the-forrerst",
+	},
+}
+
+local ui = {
+	enable = false,
+	checkboxes = {
+		[" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+		["x"] = { char = "", hl_group = "ObsidianDone" },
+		["-"] = { char = "󰍵", hl_group = "ObsidianImportant" },
+	},
+}
+
 return {
 	"obsidian-nvim/obsidian.nvim",
 	version = "*",
@@ -45,23 +66,12 @@ return {
 		log_level = vim.log.levels.INFO,
 		legacy_commands = false,
 
-		dir = "~/the-forrerst/",
+		workspaces = workspaces,
 		notes_subdir = "Zettelkasten",
 		new_notes_location = "notes_subdir",
 		note_id_func = generate_note_id,
 		note_frontmatter_func = generate_note_frontmatter,
-		workspaces = {
-			{
-				name = "the-forrerst",
-				path = "~/the-forrerst",
-			},
-		},
-		daily_notes = {
-			folder = "Journal",
-			date_format = "%Y-%m-%d",
-			alias_format = "%B %-d %Y",
-			template = "daily_template.md",
-		},
+		daily_notes = daily_notes,
 
 		wiki_link_func = "use_alias_only",
 		preferred_link_style = "wiki",
@@ -77,18 +87,9 @@ return {
 			create_new = true,
 		},
 
-		templates = {
-			folder = "Templates",
-		},
+		templates = { folder = "Templates" },
 
-		ui = {
-			enable = false,
-			checkboxes = {
-				[" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-				["x"] = { char = "", hl_group = "ObsidianDone" },
-				["-"] = { char = "󰍵", hl_group = "ObsidianImportant" },
-			},
-		},
+		ui = ui,
 	},
 	keys = require("config/keybindings/obsidian"),
 }
