@@ -32,10 +32,8 @@ end
 return {
 	"obsidian-nvim/obsidian.nvim",
 	version = "*",
-	lazy = false,
 	ft = "markdown",
 	dependencies = {
-		-- Required.
 		"nvim-lua/plenary.nvim",
 		"Saghen/blink.cmp",
 		"echasnovski/mini.nvim",
