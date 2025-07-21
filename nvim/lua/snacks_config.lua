@@ -1,7 +1,6 @@
 local M = {}
 
 M.module_list = {
-	-- "dim",
 	"image",
 	"indent",
 	"input",
@@ -26,11 +25,9 @@ M.opts.explorer = { replace_netrw = true }
 
 M.opts.picker = { sources = {} }
 M.opts.picker.sources.explorer = {
+	cmd = "rg",
 	layout = { preset = "default", preview = true },
-}
-
-M.opts.dim = {
-	animate = { enabled = false },
+	auto_close = true,
 }
 
 for _, module_name in ipairs(M.module_list) do
