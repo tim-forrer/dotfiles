@@ -10,7 +10,7 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 -- Normal --
-keymap("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>", opts_with_desc("Resource config"))
+keymap("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>", opts_with_desc("Source config"))
 keymap("n", "<leader>w", ":w<CR>", opts_with_desc("Write buffer to file"))
 keymap("n", "<leader>q", ":q<CR>", opts_with_desc("Quit neovim"))
 
