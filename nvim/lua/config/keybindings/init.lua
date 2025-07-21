@@ -17,7 +17,6 @@ keymap("n", "<leader>q", ":q<CR>", opts_with_desc("Quit neovim"))
 -- Windows (Panes) --
 keymap("n", "<leader>-", ":belowright split<CR>", opts_with_desc("Open a new window below"))
 keymap("n", "<leader>\\", ":belowright vsplit<CR>", opts_with_desc("Open a new window to the right"))
-keymap("n", "<leader>x", ":close<CR>", opts_with_desc("Close the current window"))
 keymap("n", "H", ":wincmd h<CR>", opts_with_desc("Move one window to the left"))
 keymap("n", "L", ":wincmd l<CR>", opts_with_desc("Move one window to the right"))
 keymap("n", "J", ":wincmd j<CR>", opts_with_desc("Move one window down"))
