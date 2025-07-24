@@ -10,7 +10,6 @@ M.module_list = {
 	"git",
 	"icons",
 	"operators",
-	"pairs",
 	"statusline",
 	"surround",
 	"tabline",

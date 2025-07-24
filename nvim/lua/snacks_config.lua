@@ -29,6 +29,9 @@ M.opts.picker.sources.explorer = {
 	layout = { preset = "default", preview = true },
 	auto_close = true,
 }
+M.opts.picker.sources.keymaps = {
+	layout = { preview = false },
+}
 
 for _, module_name in ipairs(M.module_list) do
 	if M.opts[module_name] == nil then
