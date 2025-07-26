@@ -1,6 +1,6 @@
 config-file = keys.config
 
-theme = dawnfox
+theme = light:dawnfox,dark:nordfox
 
 font-family = UDEV Gothic 35NF
 font-size = 18
