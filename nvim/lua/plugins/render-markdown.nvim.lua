@@ -1,6 +1,8 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
 	dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
+	lazy = true,
+	filetype = { "markdown" },
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
 	opts = {
