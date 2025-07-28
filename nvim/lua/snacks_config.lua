@@ -27,7 +27,6 @@ M.opts.picker = { sources = {} }
 M.opts.picker.sources.explorer = {
 	cmd = "rg",
 	layout = { preset = "default", preview = true },
-	auto_close = true,
 }
 M.opts.picker.sources.keymaps = {
 	layout = { preview = false },

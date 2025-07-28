@@ -13,6 +13,8 @@ vim.g.maplocalleader = ","
 keymap("n", "<leader>r", ":source ~/.config/nvim/init.lua<CR>", opts_with_desc("Source config"))
 keymap("n", "<leader>w", ":w<CR>", opts_with_desc("Write buffer to file"))
 keymap("n", "<leader>q", ":q<CR>", opts_with_desc("Quit neovim"))
+keymap("n", "<leader>d", vim.diagnostic.open_float, opts_with_desc("Show diagnostics"))
+keymap("n", "<leader>k", vim.lsp.buf.hover, opts_with_desc("Show definition using LSP"))
 
 -- Windows (Panes) --
 keymap("n", "<leader>-", ":belowright split<CR>", opts_with_desc("Open a new window below"))
@@ -23,8 +25,8 @@ keymap("n", "J", ":wincmd j<CR>", opts_with_desc("Move one window down"))
 keymap("n", "K", ":wincmd k<CR>", opts_with_desc("Move one window up"))
 
 -- Navigate buffers
-keymap("n", "<C-S-l>", ":bnext<CR>", opts_with_desc("Switch to next buffer"))
-keymap("n", "<C-S-h>", ":bprevious<CR>", opts_with_desc("Switch to prior buffer"))
+keymap("n", "<C-S-l>", vim.cmd.bnext, opts_with_desc("Switch to next buffer"))
+keymap("n", "<C-S-h>", vim.cmd.bprevious, opts_with_desc("Switch to prior buffer"))
 
 -- Visual --
 -- Stay in indent mode
