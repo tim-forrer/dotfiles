@@ -8,6 +8,7 @@ local conform_opts = {
 			"ruff_organize_imports",
 		},
 		rust = { "rustfmt" },
+		css = { "prettier" },
 	},
 	-- Set default options
 	default_format_opts = {

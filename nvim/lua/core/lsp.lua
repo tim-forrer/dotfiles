@@ -4,4 +4,5 @@ vim.lsp.enable({
 	"rust_analyzer",
 	"css",
 	"tailwind",
+	"pyright",
 })
