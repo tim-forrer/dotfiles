@@ -16,3 +16,5 @@ path add "/opt/homebrew/bin"
 path add "/opt/homebrew/sbin"
 
 $env.config.buffer_editor = "nvim"
+
+$env.XDG_CONFIG_HOME = $env.HOME | path join ".config"
