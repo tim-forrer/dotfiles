@@ -8,12 +8,8 @@ return {
 	opts = {
 		completions = {
 			blink = { enabled = true },
-			filter = { -- HACK: Have to filter else it's still passed to completion
-				checkbox = function(value)
-					return value.rendered ~= "󰥔 "
-				end,
-			},
 		},
+		render_modes = true,
 		latex = { enabled = false },
 		preset = "none",
 		heading = { sign = false },

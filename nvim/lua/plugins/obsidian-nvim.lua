@@ -43,7 +43,10 @@ local workspaces = {
 
 local ui = {
 	enable = false,
-	checkboxes = {
+}
+
+local checkboxes = {
+	order = {
 		[" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
 		["x"] = { char = "", hl_group = "ObsidianDone" },
 		["-"] = { char = "󰍵", hl_group = "ObsidianImportant" },
@@ -90,6 +93,8 @@ return {
 		templates = { folder = "Templates" },
 
 		ui = ui,
+
+		checkboxes = checkboxes,
 	},
 	keys = require("config/keybindings/obsidian"),
 }
