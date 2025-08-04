@@ -16,6 +16,8 @@ vim.opt.ttyfast = true -- Speed up scrolling in Vim
 vim.opt.breakindent = true
 vim.opt.linebreak = true
 vim.opt.conceallevel = 2
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Provider settings
 vim.g.loaded_ruby_provider = 0 -- disable ruby plugins

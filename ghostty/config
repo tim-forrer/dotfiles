@@ -1,5 +1,6 @@
 command = /opt/homebrew/bin/nu --config /Users/timforrer/.config/nushell/config.nu
 config-file = keys.config
+maximize
 
 theme = light:dawnfox,dark:nordfox
 
