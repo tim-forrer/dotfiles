@@ -9,7 +9,7 @@ def link [src:string dest:string] {
 
 let dotfiles = $env.HOME | path join "dotfiles"
 let config_dir = $env.HOME | path join ".config"
-let apps = [ghostty lazygit nvim nushell]
+let apps = [ghostty lazygit nvim nushell wezterm]
 
 let apps = match $nu.os-info.name {
   "macos" => {

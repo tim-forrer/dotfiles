@@ -10,7 +10,7 @@ module.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
 all_sub_keymaps.copy = {
 	{
 		mods = "LEADER",
-		key = "Space",
+		key = "c",
 		action = act.ActivateCopyMode,
 	},
 	{
@@ -38,28 +38,28 @@ all_sub_keymaps.panes = {
 		action = act.CloseCurrentPane({ confirm = true }),
 	},
 	{ -- Select the pane to the left
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "h",
 		action = act.ActivatePaneDirection("Left"),
 	},
 	{ -- Select the pane to the right
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "l",
 		action = act.ActivatePaneDirection("Right"),
 	},
 	{ -- Select the pane above
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "k",
 		action = act.ActivatePaneDirection("Up"),
 	},
 	{ -- Select the pane below
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "j",
 		action = act.ActivatePaneDirection("Down"),
 	},
 	{ -- Toggle active pane zoom state
 		mods = "LEADER",
-		key = "m",
+		key = "Space",
 		action = act.TogglePaneZoomState,
 	},
 }

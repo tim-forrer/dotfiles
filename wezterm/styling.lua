@@ -2,7 +2,22 @@ local wezterm = require("wezterm")
 local module = {}
 
 -- Color scheme
-module.color_scheme = "dayfox"
+local function get_appearance()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark"
+end
+
+local function scheme(appearance)
+	if appearance:find("Dark") then
+		return "nordfox"
+	else
+		return "dawnfox"
+	end
+end
+
+module.color_scheme = scheme(get_appearance())
 local color_scheme = wezterm.color.get_builtin_schemes()[module.color_scheme]
 
 -- Additional colors
@@ -28,7 +43,7 @@ module.show_new_tab_button_in_tab_bar = false
 module.tab_bar_at_bottom = false
 
 -- Font
-module.font = wezterm.font("Mononoki Nerd Font Mono")
+module.font = wezterm.font("UDEV Gothic 35NF")
 module.font_size = 18.0
 
 -- Callbacks
