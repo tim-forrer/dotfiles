@@ -3,6 +3,12 @@ local act = wezterm.action
 local module = {}
 local all_sub_keymaps = {}
 
+-- Disable keymaps
+all_sub_keymaps.disable = {
+	{ key = "l", mods = "CTRL | SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "h", mods = "CTRL | SHIFT", action = wezterm.action.DisableDefaultAssignment },
+}
+
 -- Leader definition
 module.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
 
