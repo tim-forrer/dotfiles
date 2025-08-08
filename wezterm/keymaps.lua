@@ -39,9 +39,9 @@ all_sub_keymaps.panes = {
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{ -- Close the active pane
-		mods = "LEADER",
-		key = "x",
-		action = act.CloseCurrentPane({ confirm = true }),
+		mods = "CMD",
+		key = "w",
+		action = act.CloseCurrentPane({ confirm = false }),
 	},
 	{ -- Select the pane to the left
 		mods = "CTRL",
