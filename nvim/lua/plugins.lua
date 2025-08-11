@@ -47,6 +47,8 @@ require("snacks").setup({
   lazygit = { enabled = true },
   indent = { enabled = true },
   input = { enabled = true },
+  notify = { enabled = true },
+  notifier = { enabled = true },
 })
 
 require("blink.cmp").setup({
