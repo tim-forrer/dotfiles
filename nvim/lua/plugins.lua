@@ -8,7 +8,9 @@ vim.pack.add({
   "https://github.com/folke/snacks.nvim",
   "https://github.com/echasnovski/mini.nvim",
   "https://github.com/neovim/nvim-lspconfig",
-  { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*'), build = "cargo build --release"},
+  "https://github.com/chrisgrieser/nvim-origami",
+  "https://github.com/akinsho/toggleterm.nvim",
+  { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*'), build = "cargo build --release" },
 })
 
 require("mini.ai").setup()
@@ -19,6 +21,9 @@ require("mini.files").setup()
 require("mini.surround").setup()
 require("mini.tabline").setup()
 require("mason").setup()
+require("origami").setup()
+require("toggleterm").setup()
+require("uv").setup()
 require("auto-dark-mode").setup(
   {
     set_dark_mode = function()

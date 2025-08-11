@@ -20,3 +20,6 @@ o.ttyfast = true
 o.wrap = true
 o.linebreak = true
 o.breakindent = true
+
+o.foldlevelstart = 99
+o.foldlevel = 99
