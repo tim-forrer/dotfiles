@@ -5,6 +5,7 @@ set("n", "<leader>w", ":write<CR>")
 set("n", "<leader>q", ":quit<CR>")
 set("n", "<C-D>", "<C-D>zz")
 set("n", "<C-U>", "<C-U>zz")
+set("n", "<esc>", ":nohl<CR>", { desc = "Turn off highlighting" })
 set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format current buffer" })
 set({ "n", "t" }, "<leader>t", "<cmd>ToggleTerm size=40 direction=vertical<CR>", { desc = "Toggle terminal" })
 
