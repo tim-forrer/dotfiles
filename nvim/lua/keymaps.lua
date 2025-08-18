@@ -8,6 +8,10 @@ set("n", "<C-U>", "<C-U>zz")
 set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format current buffer" })
 set({ "n", "t" }, "<leader>t", "<cmd>ToggleTerm size=40 direction=vertical<CR>", { desc = "Toggle terminal" })
 
+-- Obsidian
+set("n", "<space>ot", ":Obsidian today<CR>", { desc = "Open today's daily note" })
+set("n", "<space>op", ":Obsidian<CR>", { desc = "Open the obsidian picker" })
+
 -- Mini
 set("n", "<space>w", MiniBufremove.delete, { desc = "Delete buffer" })
 set("n", "<space><space>", MiniFiles.open, { desc = "File explorer" })
