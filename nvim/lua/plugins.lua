@@ -13,6 +13,7 @@ vim.pack.add({
   { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*'), build = "cargo build --release" },
   "https://github.com/obsidian-nvim/obsidian.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+  "https://github.com/moyiz/blink-emoji.nvim",
 })
 
 require("auto-dark-mode").setup(
@@ -76,10 +77,35 @@ require("render-markdown").setup({
     enabled = true,
     icons = { "", "", "◆", "◇" },
   },
-  latex = { enabled=false },
+  latex = { enabled = false },
 })
 require("blink.cmp").setup({
   completion = {
     menu = { auto_show = true },
-  }
+  },
+  sources = {
+    default = {
+      "lsp",
+      "buffer",
+      "path",
+    },
+    per_filetype = {
+      markdown = { "emoji" },
+      gitcommit = { "emoji" },
+    },
+    providers = {
+      emoji = {
+        name = "Emoji",
+        module = "blink-emoji",
+        opts = {
+          insert = true,
+          trigger = ":",
+        },
+      }
+    }
+  },
+  term = {
+    enabled = true,
+    sources = { "emoji", "path" }
+  },
 })
