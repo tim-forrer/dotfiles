@@ -12,7 +12,7 @@ end
 
 set dotfiles "$HOME/dotfiles"
 set config_dir "$HOME/.config"
-set apps ghostty lazygit nvim fish wezterm
+set apps lazygit nvim fish wezterm
 
 # Detect OS
 set os_name (uname | string lower)
