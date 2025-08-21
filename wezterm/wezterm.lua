@@ -1,3 +1,4 @@
+print("Loading")
 local wezterm = require("wezterm")
 local c = wezterm.config_builder()
 
