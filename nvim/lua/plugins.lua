@@ -14,6 +14,7 @@ vim.pack.add({
   "https://github.com/obsidian-nvim/obsidian.nvim",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
   "https://github.com/moyiz/blink-emoji.nvim",
+  "https://github.com/MahanRahmati/blink-nerdfont.nvim",
 })
 
 require("auto-dark-mode").setup(
@@ -90,7 +91,7 @@ require("blink.cmp").setup({
       "path",
     },
     per_filetype = {
-      markdown = { "emoji" },
+      markdown = { "emoji", "nerdfont" },
       gitcommit = { "emoji" },
     },
     providers = {
@@ -101,6 +102,11 @@ require("blink.cmp").setup({
           insert = true,
           trigger = ":",
         },
+      },
+      nerdfont = {
+        name = "Nerdfont",
+        module = "blink-nerdfont",
+        opts = { insert = true },
       }
     }
   },

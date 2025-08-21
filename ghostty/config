@@ -1,8 +1,0 @@
-command = /opt/homebrew/bin/nu --config /Users/timforrer/.config/nushell/config.nu
-config-file = keys.config
-maximize
-
-theme = light:dawnfox,dark:nordfox
-
-font-family = UDEV Gothic 35NF
-font-size = 18
