@@ -16,10 +16,15 @@ o.wildmode = "longest,list"
 o.clipboard = "unnamedplus"
 o.cursorline = true
 o.ttyfast = true
-
 o.wrap = true
 o.linebreak = true
 o.breakindent = true
-
 o.foldlevelstart = 99
 o.foldlevel = 99
+
+vim.diagnostic.config({
+  signs = true,
+  float = {
+    width = 50,
+  },
+})

@@ -1,20 +1,28 @@
 vim.pack.add({
+  -- Appearance
   "https://github.com/f-person/auto-dark-mode.nvim",
   "https://github.com/EdenEast/nightfox.nvim",
-  "https://github.com/mason-org/mason.nvim",
-  "https://github.com/benomahony/uv.nvim",
-  "https://github.com/nvim-treesitter/nvim-treesitter",
-  "https://github.com/folke/which-key.nvim",
-  "https://github.com/folke/snacks.nvim",
-  "https://github.com/echasnovski/mini.nvim",
-  "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/chrisgrieser/nvim-origami",
-  "https://github.com/akinsho/toggleterm.nvim",
-  { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*'), build = "cargo build --release" },
-  "https://github.com/obsidian-nvim/obsidian.nvim",
+  "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+  -- Specialist
+  "https://github.com/obsidian-nvim/obsidian.nvim",
+  -- Completion
+  { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range('1.*'), build = "cargo build --release" },
   "https://github.com/moyiz/blink-emoji.nvim",
   "https://github.com/MahanRahmati/blink-nerdfont.nvim",
+  -- Utils
+  "https://github.com/echasnovski/mini.nvim",
+  "https://github.com/folke/snacks.nvim",
+  "https://github.com/benomahony/uv.nvim",
+  "https://github.com/folke/which-key.nvim",
+  "https://github.com/akinsho/toggleterm.nvim",
+  "https://github.com/stevearc/conform.nvim",
+  -- LSP
+  "https://github.com/neovim/nvim-lspconfig",
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/mason-org/mason-lspconfig.nvim",
+  "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 })
 
 require("auto-dark-mode").setup(
@@ -37,10 +45,8 @@ require("mini.statusline").setup()
 require("mini.files").setup()
 require("mini.surround").setup()
 require("mini.tabline").setup()
-require("mason").setup()
 require("origami").setup()
 require("toggleterm").setup()
-require("uv").setup()
 require("snacks").setup({
   picker = { enabled = true },
   statuscolumn = { enabled = true },
@@ -115,3 +121,26 @@ require("blink.cmp").setup({
     sources = { "emoji", "path" }
   },
 })
+require("mason").setup()
+require("mason-lspconfig").setup()
+require("mason-tool-installer").setup({
+  ensure_installed = {
+    "pyright",
+    "ruff",
+    "rust-analyzer",
+    "lua-language-server",
+    "mmdc",
+    "prettier",
+    "tailwindcss-language-server",
+    "tree-sitter-cli",
+    "stylua",
+  },
+})
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+    rust = { "rustfmt", "dioxus", lsp_format = "fallback" },
+  },
+})
+

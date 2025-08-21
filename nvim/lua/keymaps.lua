@@ -5,9 +5,8 @@ set("n", "<leader>q", ":quit<CR>")
 set("n", "<C-D>", "<C-D>zz")
 set("n", "<C-U>", "<C-U>zz")
 set("n", "<esc>", "<cmd>nohl<CR>", { desc = "Turn off highlighting" })
-set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format current buffer" })
-set({ "n", "t" }, "<leader>t", "<cmd>ToggleTerm size=40 direction=vertical<CR>", { desc = "Toggle terminal" })
-set("i", "<CR>", "<CR><esc>zzi")
+set("n", "<leader>f", require("conform").format, { desc = "Format current buffer" })
+set({ "n", "t" }, "<leader>t", "<cmd>ToggleTerm size=50 direction=vertical<CR>", { desc = "Toggle terminal" })
 
 -- Obsidian
 set("n", "<space>ot", ":Obsidian today<CR>", { desc = "Open today's daily note" })
