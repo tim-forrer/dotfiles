@@ -1,8 +1,24 @@
 local wezterm = require("wezterm")
 local c = wezterm.config_builder()
 
+local get_os = function ()
+  local pipe = io.popen("uname -s", "r")
+  if pipe == nil then
+    print("Failed to open pipe.")
+    return
+  end
+  local os_name = pipe:read("*a")
+  pipe:close()
+  return os_name:gsub("^%s*(.-)%s*$", "%1")
+end
+
 local bob_path = os.getenv("HOME") .. "/.local/share/bob/nvim-bin/:"
 local homebrew_path = "/opt/homebrew/bin:/opt/homebrew/sbin:"
+
+if get_os() == "Linux" then
+  homebrew_path = "/home/linuxbrew/.linuxbrew/bin:"
+end
+
 local new_path = bob_path .. homebrew_path .. os.getenv("PATH")
 
 c.set_environment_variables = {
