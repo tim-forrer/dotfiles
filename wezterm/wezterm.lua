@@ -18,6 +18,7 @@ local bob_path = os.getenv("HOME") .. "/.local/share/bob/nvim-bin/:"
 local homebrew_path = "/opt/homebrew/bin:/opt/homebrew/sbin:"
 
 if get_os() == "Linux" then
+  wezterm.log_info("Altering homebrew_path")
   homebrew_path = "/home/linuxbrew/.linuxbrew/bin:"
 end
 
