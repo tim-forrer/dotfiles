@@ -1,11 +1,11 @@
-print("Loading")
 local wezterm = require("wezterm")
+wezterm.log_info("Building config")
 local c = wezterm.config_builder()
 
 local get_os = function ()
   local pipe = io.popen("uname -s", "r")
   if pipe == nil then
-    print("Failed to open pipe.")
+    wezterm.log_info("Failed to open pipe.")
     return
   end
   local os_name = pipe:read("*a")
