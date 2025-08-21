@@ -58,7 +58,7 @@ require("obsidian").setup({
   notes_subdir = "Zettelkasten",
   daily_notes = { folder = "Journal", default_tags = {}, template = "daily_template.md" },
   completion = { nvim_cmp = false, blink = true, min_chars = 2, create_new = true },
-  templates = { folder = "templates" },
+  templates = { folder = "Templates" },
   picker = { name = "snacks.pick" },
   ui = { enable = false, },
   legacy_commands = false,
