@@ -10,6 +10,7 @@ local get_os = function ()
   end
   local os_name = pipe:read("*a")
   pipe:close()
+  wezterm.log_info("Detected OS: " .. os_name)
   return os_name:gsub("^%s*(.-)%s*$", "%1")
 end
 
