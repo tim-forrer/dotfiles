@@ -7,6 +7,9 @@ set("n", "<C-U>", "<C-U>zz")
 set("n", "<esc>", "<cmd>nohl<CR>", { desc = "Turn off highlighting" })
 set("n", "<leader>f", require("conform").format, { desc = "Format current buffer" })
 set({ "n", "t" }, "<leader>t", "<cmd>ToggleTerm size=50 direction=vertical<CR>", { desc = "Toggle terminal" })
+set("n", "<leader>h", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
 
 -- Obsidian
 set("n", "<space>ot", ":Obsidian today<CR>", { desc = "Open today's daily note" })

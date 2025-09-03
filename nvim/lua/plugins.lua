@@ -45,7 +45,9 @@ require("mini.statusline").setup()
 require("mini.files").setup()
 require("mini.surround").setup()
 require("mini.tabline").setup()
-require("origami").setup()
+require("origami").setup(
+  { foldKeymaps = { setup = false } }
+)
 require("toggleterm").setup()
 require("snacks").setup({
   picker = { enabled = true },
