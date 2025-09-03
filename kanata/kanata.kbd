@@ -2,6 +2,11 @@
   process-unmapped-keys yes
 )
 
+(defoverrides
+  (sft ret) (bspc)
+  (sft esc) (tab)
+)
+
 (defsrc
   ;; Source keyboard (MacOS)
   esc            f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -58,74 +63,19 @@
 )
 
 (defalias
-  ;; Overload modifiers
+  ;; Overloads
   esc (tap-hold $tap-repress-timeout $hold-timeout esc @nav)
-  tab (tap-hold $tap-repress-timeout $hold-timeout tab @hpr)
   spc (tap-hold $tap-repress-timeout $hold-timeout spc @num)
-)
-
-(defchords rhand $chord-timeout
-  ;; Right-hand chords
-  ;; Dvorak layer
-  (g    ) g
-  (  c  ) c
-  (    r) r
-  (g c  ) ret
-  (  c r) bspc
-
-  ;; Numbers layer
-  (+    ) +
-  (  -  ) -
-  (    /) /
-  (+ -  ) ret
-  (  - /) bspc
-
-)
-
-(defchords lhand $chord-timeout
-  ;; Left-hand chords
-  ;; Dvorak layer
-  (,    ) ,
-  (  .  ) .
-  (    p) p
-  (, .  ) @tab
-  (  . p) @esc
-
-  ;; Numbers layer
-  ([    ) [
-  (  ]  ) ]
-  (    =) =
-  ([ ]  ) @tab
-  (  ] =) @esc
-)
-
-(defalias
-  ;; Chord aliases
-  ;; Right-hand
-  chg (chord rhand g)
-  chc (chord rhand c)
-  chr (chord rhand r)
-  ch+ (chord rhand +)
-  ch- (chord rhand -)
-  ch/ (chord rhand /)
-
-  ;; Left-hand
-  ch, (chord lhand ,)
-  ch. (chord lhand .)
-  chp (chord lhand p)
-  ch[ (chord lhand [)
-  ch] (chord lhand ])
-  ch= (chord lhand =)
 )
 
 (deflayer dvorak
   ;; Base dvorak layer
   @Qwr           f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   IntlBackslash  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX
-  XX             '    @ch, @ch. @chp y    f    @chg @chc @chr l    /    =
-  XX             @a   @o   @e   @u   i    d    @h   @t   @n   @s   -    \        XX
+  XX             '    ,    .    p    y    f    g    c    r    l    /    =
+  @hpr           @a   @o   @e   @u   i    d    @h   @t   @n   @s   -    \        XX
   XX             XX   ;    q    j    k    x    b    m    w    v    z             XX
-  fn             XX   XX   XX           @spc             XX   XX   XX    up
+  fn             XX   XX   @esc         @spc             ret  XX   XX    up
                                                                    left down  right
 )
 
@@ -133,10 +83,10 @@
   ;; Numbers layer
   @Dvk  f1    f2    f3    f4    f5    f6    f7    f8    f9   f10   f11   f12
   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX    XX    XX    XX
-  XX    XX    @ch[  @ch]  @ch=  XX    XX    @ch+  @ch-  @ch/ XX    XX    XX
+  XX    XX    [     ]     XX    XX    XX    XX    XX    XX   XX    XX    XX
   XX    @1    @2    @3    @4    5     6     @7    @8    @9   @0    XX    XX    XX
   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX    XX          XX
-  XX    XX    XX    XX                XX                XX   XX    XX    XX
+  XX    XX    XX    @esc              XX                ret  XX    XX    XX
                                                                    XX    XX    XX
 )
 
