@@ -136,6 +136,7 @@ require("mason-tool-installer").setup({
     "tailwindcss-language-server",
     "tree-sitter-cli",
     "stylua",
+    "tinymist",
   },
 })
 require("conform").setup({
