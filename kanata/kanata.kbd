@@ -64,8 +64,9 @@
 
 (defalias
   ;; Overloads
-  esc (tap-hold $tap-repress-timeout $hold-timeout esc @nav)
-  spc (tap-hold $tap-repress-timeout $hold-timeout spc @num)
+  esc (tap-hold $tap-repress-timeout $hold-timeout esc @num)
+  spc (tap-hold $tap-repress-timeout $hold-timeout spc @nav)
+  ret (tap-hold $tap-repress-timeout $hold-timeout ret @num)
 )
 
 (deflayer dvorak
@@ -75,7 +76,7 @@
   XX             '    ,    .    p    y    f    g    c    r    l    /    =
   @hpr           @a   @o   @e   @u   i    d    @h   @t   @n   @s   -    \        XX
   XX             XX   ;    q    j    k    x    b    m    w    v    z             XX
-  fn             XX   XX   @esc         @spc             ret  XX   XX    up
+  fn             XX   XX   @esc         @spc             @ret XX   XX    up
                                                                    left down  right
 )
 
@@ -96,7 +97,7 @@
   XX  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
   XX  XX    XX    XX    XX    XX    XX    🔅	  up    🔆    XX    XX    XX
   XX  XX    XX    XX    XX    XX    XX   left  down  right  XX    XX    XX    XX
-  XX  XX    XX    XX    XX    XX    XX   vold  mute  volu   XX    XX          XX
+  XX  XX    XX    XX    XX    XX    XX    XX   vold  mute  volu   XX          XX
   XX  XX    XX    XX                XX                XX    XX    XX    XX
                                                                      XX XX XX
 )
