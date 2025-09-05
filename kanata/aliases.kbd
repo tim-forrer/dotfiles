@@ -38,7 +38,7 @@
 
 (defalias
   ;; Overloads
-  esc (tap-hold $tap-repress-timeout $hold-timeout esc @num)
-  spc (tap-hold $tap-repress-timeout $hold-timeout spc @nav)
-  ret (tap-hold $tap-repress-timeout $hold-timeout ret @num)
+  esc (tap-hold $tap-repress-timeout $hold-timeout esc @nav)
+  spc (tap-hold $tap-repress-timeout $hold-timeout spc @num)
+  ret (tap-hold $tap-repress-timeout $hold-timeout ret @nav)
 )
