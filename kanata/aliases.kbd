@@ -1,0 +1,44 @@
+(defalias
+   ;; Misc
+  hpr (multi ctl alt sft met)
+)
+
+(defalias
+  ;; Layer switching
+  Dvk (layer-switch dvorak)
+  Qwr (layer-switch qwerty)
+)
+
+(defalias
+  ;; Homerow mods
+  a (tap-hold $tap-repress-timeout $hold-timeout a lsft)
+  o (tap-hold $tap-repress-timeout $hold-timeout o lalt)
+  e (tap-hold $tap-repress-timeout $hold-timeout e lctl)
+  u (tap-hold $tap-repress-timeout $hold-timeout u lmet)
+  h (tap-hold $tap-repress-timeout $hold-timeout h rmet)
+  t (tap-hold $tap-repress-timeout $hold-timeout t rctl)
+  n (tap-hold $tap-repress-timeout $hold-timeout n ralt)
+  s (tap-hold $tap-repress-timeout $hold-timeout s rsft)
+
+  1 (tap-hold $tap-repress-timeout $hold-timeout 1 lsft)
+  2 (tap-hold $tap-repress-timeout $hold-timeout 2 lalt)
+  3 (tap-hold $tap-repress-timeout $hold-timeout 3 lctl)
+  4 (tap-hold $tap-repress-timeout $hold-timeout 4 lmet)
+  7 (tap-hold $tap-repress-timeout $hold-timeout 7 rmet)
+  8 (tap-hold $tap-repress-timeout $hold-timeout 8 rctl)
+  9 (tap-hold $tap-repress-timeout $hold-timeout 9 ralt)
+  0 (tap-hold $tap-repress-timeout $hold-timeout 0 rsft)
+)
+
+(defalias
+  ;; Layer toggles
+  nav (layer-while-held navigation)
+  num (layer-while-held numbers)
+)
+
+(defalias
+  ;; Overloads
+  esc (tap-hold $tap-repress-timeout $hold-timeout esc @num)
+  spc (tap-hold $tap-repress-timeout $hold-timeout spc @nav)
+  ret (tap-hold $tap-repress-timeout $hold-timeout ret @num)
+)

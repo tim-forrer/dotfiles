@@ -1,0 +1,54 @@
+(defsrc
+  ;; Source keyboard (MacOS)
+  esc            f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  IntlBackslash  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab            q    w    e    r    t    y    u    i    o    p    [    ]
+  caps           a    s    d    f    g    h    j    k    l    ;    '    \     ret
+  lsft           grv  z    x    c    v    b    n    m    ,    .    /         rsft
+  fn             lctl lalt lmet           spc            rmet ralt rctl      up
+                                                                       left down right
+)
+
+(deflayer dvorak
+  ;; Base dvorak layer
+  @Qwr           f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  IntlBackslash  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX
+  XX             '    ,    .    p    y    f    g    c    r    l    /    =
+  @hpr           @a   @o   @e   @u   i    d    @h   @t   @n   @s   -    \        XX
+  XX             XX   ;    q    j    k    x    b    m    w    v    z             XX
+  fn             XX   XX   @esc         @spc             @ret XX   XX    up
+                                                                   left down  right
+)
+
+(deflayer numbers
+  ;; Numbers layer
+  @Dvk  f1    f2    f3    f4    f5    f6    f7    f8    f9   f10   f11   f12
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX    XX    XX    XX
+  XX    grv   [     ]     XX    XX    XX    XX    XX    XX   XX    XX    XX
+  XX    @1    @2    @3    @4    5     6     @7    @8    @9   @0    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX   XX    XX          XX
+  XX    XX    XX    @esc              XX                ret  XX    XX    XX
+                                                                   XX    XX    XX
+)
+
+(deflayer navigation
+  ;; Navigation layer
+  XX  f1    f2    f3    f4    f5    f6    f7    f8    f9    f10   f11   f12
+  XX  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX  XX    XX    XX    XX    XX    XX    🔅	  up    🔆    XX    XX    XX
+  XX  XX    XX    XX    XX    XX    XX   left  down  right  XX    XX    XX    XX
+  XX  XX    XX    XX    XX    XX    XX    XX   vold  mute  volu   XX          XX
+  XX  XX    XX    XX                XX                XX    XX    XX    XX
+                                                                     XX XX XX
+)
+
+(deflayer qwerty
+  ;; Qwerty layer (just in case)
+  @Dvk           f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  IntlBackslash  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab            q    w    e    r    t    y    u    i    o    p    [    ]
+  caps           a    s    d    f    g    h    j    k    l    ;    '    \     ret
+  lsft           grv  z    x    c    v    b    n    m    ,    .    /         rsft
+  fn             lctl lalt lmet           spc            rmet ralt rctl      up
+                                                                       left down right
+)

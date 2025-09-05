@@ -1,0 +1,5 @@
+(defvar
+  tap-repress-timeout 200 ;; Key pressed again in this time => Tap-action held
+  hold-timeout 150        ;; Time after which hold-action activates
+  chord-timeout 20        ;; Time within which keys must be pressed to activate chord
+)
