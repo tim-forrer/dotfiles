@@ -1,4 +1,4 @@
 (defvar
   tap-repress-timeout 200 ;; Key pressed again in this time => Tap-action held
-  hold-timeout 100        ;; Time after which hold-action activates
+  hold-timeout 150        ;; Time after which hold-action activates
 )
