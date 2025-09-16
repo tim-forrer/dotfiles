@@ -12,11 +12,11 @@
 (deflayer dvorak
   ;; Base dvorak layer
   @Qwr           f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  IntlBackslash  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX
+  IntlBackslash  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       bspc
   @hpr           '    ,    .    p    y    f    g    c    r    l    /    =
   @esc           @a   @o   @e   @u   i    d    @h   @t   @n   @s   -    \        @ret
   XX             XX   ;    q    j    k    x    b    m    w    v    z             XX
-  fn             XX   XX   XX           @spc             XX   XX   XX    up
+  fn             XX   XX   XX         @spc               XX   XX   XX    up
                                                                    left down  right
 )
 

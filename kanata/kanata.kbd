@@ -8,7 +8,5 @@
 
 (defoverrides
   (rsft esc) (tab)
-  (rsft spc) (bspc)
-  (lsft spc) (bspc)
 )
 
