@@ -41,4 +41,5 @@
   esc (tap-hold $tap-repress-timeout $hold-timeout esc @nav)
   spc (tap-hold $tap-repress-timeout $hold-timeout spc @num)
   ret (tap-hold $tap-repress-timeout $hold-timeout ret @nav)
+  tab (tap-hold $tap-repress-timeout $hold-timeout tab @hpr)
 )
